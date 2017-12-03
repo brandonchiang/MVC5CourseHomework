@@ -13,10 +13,10 @@ namespace MVC5Course.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FabricsEntities : DbContext
+    public partial class WANPIEEntities : DbContext
     {
-        public FabricsEntities()
-            : base("name=FabricsEntities")
+        public WANPIEEntities()
+            : base("name=WANPIEEntities")
         {
         }
     
@@ -25,10 +25,8 @@ namespace MVC5Course.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<Occupation> Occupation { get; set; }
-        public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderLine> OrderLine { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<INV02020101> INV02020101 { get; set; }
+        public virtual DbSet<UUU10010101> UUU10010101 { get; set; }
+        public virtual DbSet<UUU20010101> UUU20010101 { get; set; }
     }
 }

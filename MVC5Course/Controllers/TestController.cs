@@ -9,12 +9,13 @@ namespace MVC5Course.Controllers
 {
     public class TestController : Controller
     {
-        FabricsEntities2 db = new FabricsEntities2();
+        FabricsEntities db = new FabricsEntities();
 
         // GET: Test
         public ActionResult Index()
         {
             var data = from p in db.Product
+                       where p.IsDeleted == false
                        select p;
 
             return View(data.Take(10));
@@ -53,6 +54,9 @@ namespace MVC5Course.Controllers
             {
                 var item = db.Product.Find(id);
                 item.ProductName = data.ProductName;
+                item.Price = data.Price;
+                item.Stock = data.Stock;
+                item.Active = data.Active;
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -71,7 +75,15 @@ namespace MVC5Course.Controllers
         public ActionResult Delete(int id)
         {
             var item = db.Product.Find(id);
-            return View(item);
+
+            //db.OrderLine.RemoveRange(item.OrderLine.ToList());
+            //db.Product.Remove(item);
+
+            item.IsDeleted = true;
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost, ActionName("Delete")]
@@ -79,7 +91,9 @@ namespace MVC5Course.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Product.Find(id);
-            db.Product.Remove(product);
+            //db.Product.Remove(product);
+            //db.Product.Remove(product);
+            product.IsDeleted = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

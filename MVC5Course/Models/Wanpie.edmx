@@ -1,0 +1,2043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WANPIEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="INV02020101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="VOUCHER_NO" />
+            <PropertyRef Name="DATA_SEQ" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="uniqueidentifier" />
+          <Property Name="CORP_NO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="VOUCHER_NO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="VOUCHER_DATE" Type="datetime" />
+          <Property Name="VOUCHER_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="VOUCHER_FIX_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BELONG_TO_AP_DATE" Type="datetime" />
+          <Property Name="BUSINESS_EMP_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="DEPT_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="INTER_EXT_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_CORP_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="MAKE_COLL_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="ACT_FOR_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="INVOICE_FOR_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="BUSINESS_PI_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRIANGLE_TRADE_BATCH_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="SPEED_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CURR_CODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="CURR_RATE" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="TAX_INNER_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="TAX_PERCENT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="OVER_CRED_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CONTROL_QTY_AMT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="VOUCHER_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_NOT_INCLUDE_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_INCLUDE_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_NOT_INCLUDE_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_INCLUDE_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="MAX_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="MIN_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="AUTO_CLOSE_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_CHANGE_REASON" Type="ntext" />
+          <Property Name="VOUCHER_REMARK" Type="nvarchar" MaxLength="250" />
+          <Property Name="LIAISON_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="LIAISON_ADDR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="LIAISON_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_TEL_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_FAX_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_WEB_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_NATION_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DIRECT_DELIVER_CUSTOMER_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DELI_ZIP_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DELI_ADDR" Type="nvarchar" MaxLength="250" />
+          <Property Name="INVO_XTYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CONTRACT_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRADE_COND" Type="nvarchar" MaxLength="10" />
+          <Property Name="SHIP_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PAY_WAY" Type="nvarchar" MaxLength="10" />
+          <Property Name="BILL_DUE_DAYS" Type="int" />
+          <Property Name="IN_FORMAT_TYPE_CODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="LEVY_TAX_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="SALES_VOLUME" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="SALES_VOLUME_TAX" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="INVOICE_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="CHANGE_DATE" Type="datetime" />
+          <Property Name="CRED_CHECK_PASS_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="NEXT_CRED_CHECK_PASS_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_SCALE_NO_PRINT_COMBINE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="SIMULATE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="ALTER_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="AT_END_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CLOSE_DATE" Type="datetime" />
+          <Property Name="CLOSE_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="CLOSE_REASON_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="VOUCHER_NO_CREATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="VOUCHER_DATE_CREATE" Type="datetime" />
+          <Property Name="VOUCHER_NO_CHANGE" Type="nvarchar" MaxLength="20" />
+          <Property Name="VOUCHER_DATE_CHANGE" Type="datetime" />
+          <Property Name="OVER_BUDGET_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="OVER_BUDGET_DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="BECOME_INVALID_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="BECOME_INVALID_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="BECOME_INVALID_DATE" Type="datetime" />
+          <Property Name="ENTRY_TYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="datetime" />
+          <Property Name="ENTRY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="ENTRY_TIME" Type="datetime" />
+          <Property Name="MODIFY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="MODIFY_TIME" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="datetime" />
+          <Property Name="DATA_SEQ" Type="int" Nullable="false" />
+          <Property Name="REMARK_CREATE" Type="nvarchar" MaxLength="10" />
+          <Property Name="REMARK_CHANGE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_SCALE_NO" Type="nvarchar" MaxLength="60" />
+          <Property Name="BATCH_NUMBER" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_SCALE_DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UNIT_123_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="RECEI_PROD_PRICE_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DETAIL_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="COUNT_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_PRICE" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_NOT_INCLUDE_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_INCLUDE_TAX_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_NOT_INCLUDE_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_INCLUDE_TAX_AMT_NT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="UNIT2_123_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DETAIL2_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="COUNT2_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="STORE_NO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PROD_EXPECT_STORE_POSITION" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRE_ACCEPT_DATE" Type="datetime" />
+          <Property Name="PRE_PASS_CHECK_DATE" Type="datetime" />
+          <Property Name="CONTRACT_NO_DATE" Type="datetime" />
+          <Property Name="USEAGE_CODE_AJ" Type="nvarchar" MaxLength="10" />
+          <Property Name="VOUCHER_NO_INV03020101" Type="nvarchar" MaxLength="20" />
+          <Property Name="VOUCHER_NO_INV13010101" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHARE_FORM" Type="nvarchar" MaxLength="10" />
+          <Property Name="SHARE_FORM_ACC_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MANUFACTURER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CAPITAL_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="INDE_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="COST_DEPT_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="COST_BUSINESS_ITEM" Type="nvarchar" MaxLength="10" />
+          <Property Name="RESELL_BUSINESS_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="ACCT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DETAIL_REMARK" Type="nvarchar" MaxLength="250" />
+          <Property Name="VOUCHER_NO_INV02010101" Type="nvarchar" MaxLength="20" />
+          <Property Name="UNIQ_KEY_INV02010101" Type="uniqueidentifier" />
+          <Property Name="VOUCHER_NO_INV02011801" Type="nvarchar" MaxLength="20" />
+          <Property Name="UNIQ_KEY_INV02011801" Type="uniqueidentifier" />
+          <Property Name="IN_STOCK_COUNT_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="ACCEPT_COUNT_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="ACCEPT_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_COUNT_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_CHANGE_REASON" Type="ntext" />
+          <Property Name="TRIANGLE_TRADE_DETAIL_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="AP_MAKE_COLL_REAL_DATE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PRED_AP_DATE" Type="datetime" />
+          <Property Name="CASH_INCOME_DATE" Type="datetime" />
+          <Property Name="USC_FIELD_CHA_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_4" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="datetime" />
+          <Property Name="USC_FIELD_DATE_2" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_11" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_12" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_13" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_14" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_15" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_CHA_16" Type="nvarchar" MaxLength="50" />
+          <Property Name="DETAILXX_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_3" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_4" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_5" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_6" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_7" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_8" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_DATE_1" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_2" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_3" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_4" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_5" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_6" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_7" Type="datetime" />
+          <Property Name="DETAILXX_FIELD_DATE_8" Type="datetime" />
+          <Property Name="BUDGET_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="AP_GOODS_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_CASE_NO_ACC02010101" Type="nvarchar" MaxLength="12" />
+          <Property Name="BUSINESS_CASE_NO_2_ACC02010101" Type="nvarchar" MaxLength="12" />
+          <Property Name="BUSINESS_CASE_NO_3_ACC02010101" Type="nvarchar" MaxLength="12" />
+          <Property Name="BUSINESS_CASE_NO_ACC06020101" Type="nvarchar" MaxLength="12" />
+          <Property Name="BUSINESS_CASE_NO_2_ACC06020101" Type="nvarchar" MaxLength="12" />
+          <Property Name="BUSINESS_CASE_NO_3_ACC06020101" Type="nvarchar" MaxLength="12" />
+          <Property Name="UNIQ_KEY_INV03020101" Type="uniqueidentifier" />
+          <Property Name="OVER_PRE_PURDAY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="GIVEAWAY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DEMAND_DATE" Type="datetime" />
+          <Property Name="PURCH_PLAN_NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="GOVER_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="APP_BUSINESS_EMP_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="APP_BUSINESS_DEPT_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="ASSEM_NO_1" Type="nvarchar" MaxLength="3" />
+          <Property Name="CORELATION_CODE_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="CORELATION_CODE_1_NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="ASSEM_NO_2" Type="nvarchar" MaxLength="3" />
+          <Property Name="CORELATION_CODE_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="CORELATION_CODE_2_NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="ASSEM_NO_3" Type="nvarchar" MaxLength="3" />
+          <Property Name="CORELATION_CODE_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="CORELATION_CODE_3_NAME" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UUU10010101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="BUSINESS_CORP_NO" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="uniqueidentifier" />
+          <Property Name="CORP_NO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BUSINESS_CORP_NO" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="BUSINESS_CORP_NAME_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="BUSINESS_CORP_ABBR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="COMPANY_PERSON_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FACTORY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CUSTOMER_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="BUSINESS_CORP_NAME_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="BUSINESS_CORP_ABBR_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="INTER_EXT_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_UNIF_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="EDI_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_TAX_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_SET_UP_DATE" Type="datetime" />
+          <Property Name="BUSINESS_CORP_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_ITEM_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_ITEM_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUINESS_CAPITAL" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="BUSINESS_CHIEF_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMP_NUM" Type="int" />
+          <Property Name="AREA_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PARTY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="GROUP_NO_CORP_NO_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="GROUP_NO_CORP_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="ORG_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="TRANSNATIONAL_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="SHARES_CODE" Type="nvarchar" MaxLength="16" />
+          <Property Name="CORPMODEL_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CORP_PUB_YYYYMM" Type="int" />
+          <Property Name="CORP_TSE_YYYYMM" Type="int" />
+          <Property Name="CORP_OTC_YYYYMM" Type="int" />
+          <Property Name="GROUP_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="VOUCHER_REMARK" Type="nvarchar" MaxLength="250" />
+          <Property Name="CUS_TAX_INNER_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_TAX_PERCENT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="CUS_TRADE_COND_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_PAY_WAY_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_CURR_CODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="CUS_INVOICE_OR_ACCORD_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="SA_FORMAT_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="INVO_XTYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="TRAN_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAKE_COLL_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="INVOICE_FOR_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="INVO_NAME_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="INVO_ADDR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="SALE_GRADE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="ROUTE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BELONG_TO_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="JOIN_SELF_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="ORDER_MUST_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="ORDER_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="ATTACH_PAPER" Type="nvarchar" MaxLength="250" />
+          <Property Name="SALE_CUST_PROD_NO_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CHECK_SHEET_SEND_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_INVOICE_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_INVOICE_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_INVOICE_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_AR_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_AR_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_AR_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_MAKE_COLL_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_MAKE_COLL_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_MAKE_COLL_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_CASH_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUS_CASH_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUS_CASH_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHEQ_PAY_DATE" Type="int" />
+          <Property Name="CUS_BILL_PAY_DAYS" Type="nvarchar" MaxLength="100" />
+          <Property Name="MAKE_COLL_CASE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAKE_COLL_UNUSAL_REASON" Type="nvarchar" MaxLength="250" />
+          <Property Name="BUSINESS_DISC_RATE" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="BUSINESS_START_DATE" Type="datetime" />
+          <Property Name="BUSINESS_END_DATE" Type="datetime" />
+          <Property Name="CRED_CONTAIN_GROUP" Type="nvarchar" MaxLength="10" />
+          <Property Name="CRED_CHECK_POINT" Type="nvarchar" MaxLength="2" />
+          <Property Name="CRED_CHECK_POINT_END" Type="nvarchar" MaxLength="2" />
+          <Property Name="OVER_CRED_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CRED_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="CUS_BEGIN_BUSINESS_DATE" Type="datetime" />
+          <Property Name="CUS_BUSINESS_STOP_DATE" Type="datetime" />
+          <Property Name="CUS_BUSINESS_DISCOUNT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_TAX_INNER_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_TAX_PERCENT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="FAC_TRADE_COND_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_PAY_WAY_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_CURR_CODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="FAC_INVOICE_OR_ACCORD_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="IN_FORMAT_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PAY_COLL_BUSINESS" Type="nvarchar" MaxLength="16" />
+          <Property Name="PUR_GRADE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PUR_CRED_CHECK_POINT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PUR_CRED_CHECK_POINT_END_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="OVER_PUR_CRED_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PUR_CRED_AMT" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="FAC_INVOICE_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_INVOICE_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_INVOICE_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_AP_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_AP_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_AP_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_MAKE_COLL_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_MAKE_COLL_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_MAKE_COLL_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_CASH_BASS_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_CASH_DATE_BY_DATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="FAC_CASH_DATE_BY_WEEK" Type="nvarchar" MaxLength="100" />
+          <Property Name="REMIT_MONEY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="REMIT_MONEY_BANK_ACCT_NO" Type="nvarchar" MaxLength="25" />
+          <Property Name="REMIT_MONEY_BANK_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="REMIT_MONEY_NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="CUS_MONEY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CUS_MONEY_BANK_ACCT_NO" Type="nvarchar" MaxLength="25" />
+          <Property Name="CUS_MONEY_BANK_NO" Type="nvarchar" MaxLength="16" />
+          <Property Name="CUS_MONEY_NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="BILL_TITLE" Type="nvarchar" MaxLength="250" />
+          <Property Name="PAY_CHEQ_PAY_DATE" Type="int" />
+          <Property Name="PROC_COST_BURDEN_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FAC_BEGIN_BUSINESS_DATE" Type="datetime" />
+          <Property Name="FAC_BUSINESS_STOP_DATE" Type="datetime" />
+          <Property Name="FAC_BUSINESS_DISCOUNT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_TEL_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_FAX_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_WEB_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BUSINESS_ADDR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="BUSINESS_ADDR_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="LIAISON_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="LIAISON_ADDR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="LIAISON_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="LIAISON_ADDR_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="ACCOUNT_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="ACCOUNT_ADDR" Type="nvarchar" MaxLength="250" />
+          <Property Name="BUSINESS_ACCT_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_ACCT_TEL" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUSINESS_CASH_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_CASH_TEL" Type="nvarchar" MaxLength="100" />
+          <Property Name="DELI_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DELI_ADDR" Type="nvarchar" MaxLength="250" />
+          <Property Name="DELI_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DELI_TEL" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPOINT_INVOICE_CORP_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="CLIENT_PRICE_TACTIC" Type="nvarchar" MaxLength="20" />
+          <Property Name="REPLY_STAMPS_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_EXPECT_STORE_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="CLOSE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="STOP_USE_DATE" Type="datetime" />
+          <Property Name="DEL_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="LIMITS_OF_AUTHORITY_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="datetime" />
+          <Property Name="ENTRY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="ENTRY_TIME" Type="datetime" />
+          <Property Name="MODIFY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="MODIFY_TIME" Type="datetime" />
+          <Property Name="ENTRY_TYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="USC_FIELD_CHA_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_4" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_5" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_6" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_7" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_8" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_9" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_10" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="datetime" />
+          <Property Name="USC_FIELD_DATE_2" Type="datetime" />
+          <Property Name="FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="datetime" />
+          <Property Name="LIAISON_BUSINESS_TEL_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="LIAISON_BUSINESS_FAX_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="LABOR_IDENTITY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="LABOR_ID" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZIP_PERM_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PERM_ADDR" Type="nvarchar" MaxLength="250" />
+          <Property Name="BANK_NAME_ENG" Type="nvarchar" MaxLength="100" />
+          <Property Name="SWIFT_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="NATION_TAIWAN_TAX_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="BANK_ADDR_ENG" Type="nvarchar" MaxLength="200" />
+          <Property Name="SUB_FORMAT_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="INVO35_TRANS_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUSINESS_CORP_NO_KIND_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_4" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_5" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_6" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_7" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_8" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_9" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_CORP_NO_KIND_10" Type="nvarchar" MaxLength="20" />
+          <Property Name="CUST_GRADE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAIL_THE_WAY" Type="nvarchar" MaxLength="10" />
+          <Property Name="VIRTUAL_MASK_BANK_ACCT_NO" Type="nvarchar" MaxLength="25" />
+          <Property Name="ISR_MIG_EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="INVO_ZIP_ADDR_CODE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UUU20010101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="PROD_NO" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="uniqueidentifier" />
+          <Property Name="CORP_NO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PROD_NO" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="PROD_NAME_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_NAME_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_NAME_CHI_SECRET" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_ABBR_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_ABBR_ENG" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_NAME_INVO" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_SCALE_DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROD_KIND_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_GRADE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_BRAND" Type="nvarchar" MaxLength="250" />
+          <Property Name="ISBN_ISSN_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ORI_CORP_CODE" Type="nvarchar" MaxLength="60" />
+          <Property Name="BAR_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCC_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CIS_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="LAW_ARTICLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACCT_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_NO_TAX_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_EXPECT_STORE_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_EXPECT_STORE_POSITION" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_STORE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="BATCH_NUMBER_CONTROL_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="MACHINE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="ABC_LEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_IMPORT_GRADE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAJOR_PACKAGING" Type="nvarchar" MaxLength="60" />
+          <Property Name="MAJOR_PACKAGING_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="MAJOR_PACKING_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_PACKAGE_QTY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="PROD_CARRYING_COST_PER" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="GROUP_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_PE_MUST_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="NO_MOVE_DEFAULT_DAYS" Type="int" />
+          <Property Name="PROD_DISCOUNT_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROD_KIND_1_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_2_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_3_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_4_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_5_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_6_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_7_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_8_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_9_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_10_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="QC_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CHECK_LIST_PRODUCE_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PART_FULL_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="TEST_RESULT_RECORD_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_CHECK_DAY" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="TEST_CYCLE_MM_DAY_TYPE_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="TEST_CYCLE_MM_OR_DD" Type="int" />
+          <Property Name="TAKE_STOCK_CYCLE_CODE" Type="nvarchar" MaxLength="100" />
+          <Property Name="TEST_ITEM_FORM" Type="nvarchar" MaxLength="10" />
+          <Property Name="TEST_STAND_NO_SECRET" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROD_MAIN_SALE_DEPT_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="OUT_OF_STOCK_REASON_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="LAUNCH_DATE" Type="datetime" />
+          <Property Name="BEG_DATE" Type="datetime" />
+          <Property Name="PROD_LIMIT_DATE" Type="datetime" />
+          <Property Name="INDE_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESS_ITEM_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_SCALE_NO_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="PROD_SCALE_NO_FORMAT_CODE" Type="nvarchar" MaxLength="30" />
+          <Property Name="BONDED_GOODS_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CHECK_ALLOW_RATE" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="BOM_NO_FINISHED" Type="nvarchar" MaxLength="60" />
+          <Property Name="AUTHOR_NAMES" Type="nvarchar" MaxLength="200" />
+          <Property Name="TRANSLATOR_NAMES" Type="nvarchar" MaxLength="200" />
+          <Property Name="WRITE_MUSIC_NAMES" Type="nvarchar" MaxLength="200" />
+          <Property Name="WRITE_WORDS_NAMES" Type="nvarchar" MaxLength="200" />
+          <Property Name="LEAD_SINGER_NAMES" Type="nvarchar" MaxLength="200" />
+          <Property Name="PUBLISH_CORP" Type="nvarchar" MaxLength="16" />
+          <Property Name="GENERAL_MARKET_CORP" Type="nvarchar" MaxLength="16" />
+          <Property Name="ISSUING_DATE" Type="datetime" />
+          <Property Name="CLOSE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="STOP_USE_DATE" Type="datetime" />
+          <Property Name="DEL_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="LIMITS_OF_AUTHORITY_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_CLEARING_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="CLEARING_MARK_DATE" Type="datetime" />
+          <Property Name="PROD_SHARE_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="datetime" />
+          <Property Name="ENTRY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="ENTRY_TIME" Type="datetime" />
+          <Property Name="MODIFY_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="MODIFY_TIME" Type="datetime" />
+          <Property Name="ENTRY_TYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="USC_FIELD_CHA_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_4" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_5" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_6" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_7" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_8" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_9" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_CHA_10" Type="nvarchar" MaxLength="20" />
+          <Property Name="USC_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="datetime" />
+          <Property Name="USC_FIELD_DATE_2" Type="datetime" />
+          <Property Name="FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="nvarchar" MaxLength="50" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="datetime" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="datetime" />
+          <Property Name="CAP_PER_UNIFY_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PUR_EQUAL_QTY_YN" Type="nvarchar" MaxLength="1" />
+          <Property Name="ORI_PLACE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_DEPT_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="VALID_YMD_TYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="VALID_YEARS" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_MONTHS" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_DAYS" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_COUNT_DAYS" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TASTING_DAYS" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MAX_QTY" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SALE_PE_MUST_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DESIGN_PROD_SHEET" Type="nvarchar" MaxLength="10" />
+          <Property Name="PROD_KIND_SIGN_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROD_KIND_POS_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="BATCH_NUMBER_VIRTUAL_YN" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="WANPIEModelStoreContainer">
+          <EntitySet Name="INV02020101" EntityType="Self.INV02020101" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UUU10010101" EntityType="Self.UUU10010101" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UUU20010101" EntityType="Self.UUU20010101" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WANPIEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="INV02020101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="VOUCHER_NO" />
+            <PropertyRef Name="DATA_SEQ" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="Guid" />
+          <Property Name="CORP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VOUCHER_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VOUCHER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHER_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_FIX_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BELONG_TO_AP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="BUSINESS_EMP_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="INTER_EXT_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MAKE_COLL_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ACT_FOR_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="INVOICE_FOR_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_PI_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRIANGLE_TRADE_BATCH_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SPEED_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CURR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CURR_RATE" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="TAX_INNER_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TAX_PERCENT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="OVER_CRED_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CONTROL_QTY_AMT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_NOT_INCLUDE_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_INCLUDE_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_NOT_INCLUDE_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_INCLUDE_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="MAX_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="MIN_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="AUTO_CLOSE_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHER_CHANGE_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_REMARK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_ADDR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_TEL_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_FAX_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_WEB_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_NATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECT_DELIVER_CUSTOMER_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_ZIP_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_ADDR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="INVO_XTYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CONTRACT_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRADE_COND" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SHIP_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PAY_WAY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BILL_DUE_DAYS" Type="Int32" />
+          <Property Name="IN_FORMAT_TYPE_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LEVY_TAX_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SALES_VOLUME" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="SALES_VOLUME_TAX" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="INVOICE_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="CHANGE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CRED_CHECK_PASS_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="NEXT_CRED_CHECK_PASS_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_NO_PRINT_COMBINE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SIMULATE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ALTER_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="AT_END_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CLOSE_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_REASON_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_NO_CREATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_DATE_CREATE" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHER_NO_CHANGE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_DATE_CHANGE" Type="DateTime" Precision="3" />
+          <Property Name="OVER_BUDGET_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="OVER_BUDGET_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BECOME_INVALID_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BECOME_INVALID_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="BECOME_INVALID_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ENTRY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="MODIFY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="DateTime" Precision="3" />
+          <Property Name="DATA_SEQ" Type="Int32" Nullable="false" />
+          <Property Name="REMARK_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK_CHANGE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BATCH_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UNIT_123_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RECEI_PROD_PRICE_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DETAIL_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="COUNT_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_PRICE" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_NOT_INCLUDE_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_INCLUDE_TAX_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_NOT_INCLUDE_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_INCLUDE_TAX_AMT_NT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="UNIT2_123_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DETAIL2_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="COUNT2_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="STORE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROD_EXPECT_STORE_POSITION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRE_ACCEPT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PRE_PASS_CHECK_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CONTRACT_NO_DATE" Type="DateTime" Precision="3" />
+          <Property Name="USEAGE_CODE_AJ" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_NO_INV03020101" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_NO_INV13010101" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHARE_FORM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SHARE_FORM_ACC_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MANUFACTURER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CAPITAL_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="INDE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COST_DEPT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="COST_BUSINESS_ITEM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RESELL_BUSINESS_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ACCT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DETAIL_REMARK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_NO_INV02010101" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UNIQ_KEY_INV02010101" Type="Guid" />
+          <Property Name="VOUCHER_NO_INV02011801" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UNIQ_KEY_INV02011801" Type="Guid" />
+          <Property Name="IN_STOCK_COUNT_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="ACCEPT_COUNT_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="ACCEPT_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_COUNT_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="RETURN_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAIL_CHANGE_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TRIANGLE_TRADE_DETAIL_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AP_MAKE_COLL_REAL_DATE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PRED_AP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CASH_INCOME_DATE" Type="DateTime" Precision="3" />
+          <Property Name="USC_FIELD_CHA_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="USC_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_CHA_16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILXX_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_3" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_4" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_5" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_6" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_7" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_NUM_8" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="DETAILXX_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_3" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_4" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_5" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_6" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_7" Type="DateTime" Precision="3" />
+          <Property Name="DETAILXX_FIELD_DATE_8" Type="DateTime" Precision="3" />
+          <Property Name="BUDGET_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AP_GOODS_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_ACC02010101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_2_ACC02010101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_3_ACC02010101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_ACC06020101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_2_ACC06020101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASE_NO_3_ACC06020101" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="UNIQ_KEY_INV03020101" Type="Guid" />
+          <Property Name="OVER_PRE_PURDAY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="GIVEAWAY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DEMAND_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PURCH_PLAN_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GOVER_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="APP_BUSINESS_EMP_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="APP_BUSINESS_DEPT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ASSEM_NO_1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_1_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ASSEM_NO_2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_2_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ASSEM_NO_3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CORELATION_CODE_3_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UUU10010101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="BUSINESS_CORP_NO" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="Guid" />
+          <Property Name="CORP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BUSINESS_CORP_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BUSINESS_CORP_NAME_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_ABBR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="COMPANY_PERSON_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FACTORY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NAME_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_ABBR_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="INTER_EXT_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_UNIF_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EDI_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_TAX_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_SET_UP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="BUSINESS_CORP_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ITEM_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ITEM_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUINESS_CAPITAL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="BUSINESS_CHIEF_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_NUM" Type="Int32" />
+          <Property Name="AREA_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PARTY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="GROUP_NO_CORP_NO_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="GROUP_NO_CORP_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ORG_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSNATIONAL_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SHARES_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CORPMODEL_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CORP_PUB_YYYYMM" Type="Int32" />
+          <Property Name="CORP_TSE_YYYYMM" Type="Int32" />
+          <Property Name="CORP_OTC_YYYYMM" Type="Int32" />
+          <Property Name="GROUP_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_REMARK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_TAX_INNER_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_TAX_PERCENT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="CUS_TRADE_COND_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_PAY_WAY_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_CURR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_INVOICE_OR_ACCORD_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SA_FORMAT_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="INVO_XTYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TRAN_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MAKE_COLL_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="INVOICE_FOR_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="INVO_NAME_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="INVO_ADDR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SALE_GRADE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ROUTE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BELONG_TO_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="JOIN_SELF_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ORDER_MUST_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ORDER_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ATTACH_PAPER" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SALE_CUST_PROD_NO_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CHECK_SHEET_SEND_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_INVOICE_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_INVOICE_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_INVOICE_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_AR_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_AR_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_AR_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MAKE_COLL_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MAKE_COLL_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MAKE_COLL_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_CASH_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_CASH_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_CASH_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHEQ_PAY_DATE" Type="Int32" />
+          <Property Name="CUS_BILL_PAY_DAYS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MAKE_COLL_CASE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MAKE_COLL_UNUSAL_REASON" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_DISC_RATE" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="BUSINESS_START_DATE" Type="DateTime" Precision="3" />
+          <Property Name="BUSINESS_END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CRED_CONTAIN_GROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CRED_CHECK_POINT" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CRED_CHECK_POINT_END" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="OVER_CRED_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CRED_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="CUS_BEGIN_BUSINESS_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CUS_BUSINESS_STOP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CUS_BUSINESS_DISCOUNT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_TAX_INNER_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_TAX_PERCENT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="FAC_TRADE_COND_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_PAY_WAY_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_CURR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_INVOICE_OR_ACCORD_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IN_FORMAT_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PAY_COLL_BUSINESS" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PUR_GRADE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PUR_CRED_CHECK_POINT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PUR_CRED_CHECK_POINT_END_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OVER_PUR_CRED_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PUR_CRED_AMT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="FAC_INVOICE_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_INVOICE_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_INVOICE_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_AP_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_AP_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_AP_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_MAKE_COLL_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_MAKE_COLL_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_MAKE_COLL_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_CASH_BASS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_CASH_DATE_BY_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_CASH_DATE_BY_WEEK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REMIT_MONEY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="REMIT_MONEY_BANK_ACCT_NO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="REMIT_MONEY_BANK_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="REMIT_MONEY_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MONEY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MONEY_BANK_ACCT_NO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MONEY_BANK_NO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CUS_MONEY_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BILL_TITLE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PAY_CHEQ_PAY_DATE" Type="Int32" />
+          <Property Name="PROC_COST_BURDEN_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FAC_BEGIN_BUSINESS_DATE" Type="DateTime" Precision="3" />
+          <Property Name="FAC_BUSINESS_STOP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="FAC_BUSINESS_DISCOUNT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_TEL_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_FAX_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_WEB_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ADDR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ADDR_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_ADDR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_ADDR_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_ADDR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ACCT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ACCT_TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASH_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CASH_TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_ADDR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DELI_TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPOINT_INVOICE_CORP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_PRICE_TACTIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REPLY_STAMPS_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_EXPECT_STORE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="STOP_USE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DEL_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LIMITS_OF_AUTHORITY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ENTRY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="MODIFY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_6" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_7" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_8" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_9" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_10" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="USC_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="DateTime" Precision="3" />
+          <Property Name="LIAISON_BUSINESS_TEL_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LIAISON_BUSINESS_FAX_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LABOR_IDENTITY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LABOR_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZIP_PERM_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PERM_ADDR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BANK_NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SWIFT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NATION_TAIWAN_TAX_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BANK_ADDR_ENG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SUB_FORMAT_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="INVO35_TRANS_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_6" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_7" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_8" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_9" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_CORP_NO_KIND_10" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CUST_GRADE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL_THE_WAY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VIRTUAL_MASK_BANK_ACCT_NO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ISR_MIG_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="INVO_ZIP_ADDR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UUU20010101">
+          <Key>
+            <PropertyRef Name="CORP_NO" />
+            <PropertyRef Name="PROD_NO" />
+          </Key>
+          <Property Name="UNIQ_KEY" Type="Guid" />
+          <Property Name="CORP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROD_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROD_NAME_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_NAME_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_NAME_CHI_SECRET" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_ABBR_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_ABBR_ENG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_NAME_INVO" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_GRADE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_BRAND" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN_ISSN_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORI_CORP_CODE" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BAR_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCC_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CIS_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LAW_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACCT_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_NO_TAX_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_EXPECT_STORE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_EXPECT_STORE_POSITION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_STORE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BATCH_NUMBER_CONTROL_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="MACHINE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ABC_LEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_IMPORT_GRADE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MAJOR_PACKAGING" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MAJOR_PACKAGING_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="MAJOR_PACKING_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_PACKAGE_QTY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="PROD_CARRYING_COST_PER" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="GROUP_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_PE_MUST_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NO_MOVE_DEFAULT_DAYS" Type="Int32" />
+          <Property Name="PROD_DISCOUNT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_1_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_2_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_3_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_4_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_5_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_6_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_7_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_8_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_9_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_10_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="QC_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CHECK_LIST_PRODUCE_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PART_FULL_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TEST_RESULT_RECORD_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_CHECK_DAY" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="TEST_CYCLE_MM_DAY_TYPE_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TEST_CYCLE_MM_OR_DD" Type="Int32" />
+          <Property Name="TAKE_STOCK_CYCLE_CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TEST_ITEM_FORM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TEST_STAND_NO_SECRET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_MAIN_SALE_DEPT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_OF_STOCK_REASON_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAUNCH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="BEG_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PROD_LIMIT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="INDE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESS_ITEM_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_NO_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_SCALE_NO_FORMAT_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="BONDED_GOODS_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CHECK_ALLOW_RATE" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="BOM_NO_FINISHED" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="AUTHOR_NAMES" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSLATOR_NAMES" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WRITE_MUSIC_NAMES" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WRITE_WORDS_NAMES" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LEAD_SINGER_NAMES" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PUBLISH_CORP" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="GENERAL_MARKET_CORP" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ISSUING_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CLOSE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="STOP_USE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DEL_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LIMITS_OF_AUTHORITY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_CLEARING_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CLEARING_MARK_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PROD_SHARE_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT_BOSS_ALLOW_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="ENTRY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="MODIFY_ID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="ENTRY_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_6" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_7" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_8" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_9" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_CHA_10" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USC_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="USC_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="USC_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_CHA_16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHXX_FIELD_NUM_1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_3" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_4" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_5" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_6" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_7" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_NUM_8" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="VOUCHXX_FIELD_DATE_1" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_2" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_3" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_4" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_5" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_6" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_7" Type="DateTime" Precision="3" />
+          <Property Name="VOUCHXX_FIELD_DATE_8" Type="DateTime" Precision="3" />
+          <Property Name="CAP_PER_UNIFY_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PUR_EQUAL_QTY_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ORI_PLACE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_DEPT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VALID_YMD_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VALID_YEARS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_MONTHS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_DAYS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VALID_COUNT_DAYS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TASTING_DAYS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MAX_QTY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SALE_PE_MUST_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DESIGN_PROD_SHEET" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_SIGN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROD_KIND_POS_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BATCH_NUMBER_VIRTUAL_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WANPIEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="INV02020101" EntityType="Self.INV02020101" />
+          <EntitySet Name="UUU10010101" EntityType="Self.UUU10010101" />
+          <EntitySet Name="UUU20010101" EntityType="Self.UUU20010101" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WANPIEModelStoreContainer" CdmEntityContainer="WANPIEEntities">
+          <EntitySetMapping Name="INV02020101">
+            <EntityTypeMapping TypeName="WANPIEModel.INV02020101">
+              <MappingFragment StoreEntitySet="INV02020101">
+                <ScalarProperty Name="UNIQ_KEY" ColumnName="UNIQ_KEY" />
+                <ScalarProperty Name="CORP_NO" ColumnName="CORP_NO" />
+                <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
+                <ScalarProperty Name="VOUCHER_DATE" ColumnName="VOUCHER_DATE" />
+                <ScalarProperty Name="VOUCHER_TYPE" ColumnName="VOUCHER_TYPE" />
+                <ScalarProperty Name="VOUCHER_FIX_TYPE_CODE" ColumnName="VOUCHER_FIX_TYPE_CODE" />
+                <ScalarProperty Name="BELONG_TO_AP_DATE" ColumnName="BELONG_TO_AP_DATE" />
+                <ScalarProperty Name="BUSINESS_EMP_NO" ColumnName="BUSINESS_EMP_NO" />
+                <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+                <ScalarProperty Name="INTER_EXT_TYPE_CODE" ColumnName="INTER_EXT_TYPE_CODE" />
+                <ScalarProperty Name="BUSINESS_CORP_NO" ColumnName="BUSINESS_CORP_NO" />
+                <ScalarProperty Name="MAKE_COLL_BUSINESS" ColumnName="MAKE_COLL_BUSINESS" />
+                <ScalarProperty Name="ACT_FOR_BUSINESS" ColumnName="ACT_FOR_BUSINESS" />
+                <ScalarProperty Name="INVOICE_FOR_BUSINESS" ColumnName="INVOICE_FOR_BUSINESS" />
+                <ScalarProperty Name="BUSINESS_PI_NO" ColumnName="BUSINESS_PI_NO" />
+                <ScalarProperty Name="TRIANGLE_TRADE_BATCH_NO" ColumnName="TRIANGLE_TRADE_BATCH_NO" />
+                <ScalarProperty Name="SPEED_CODE" ColumnName="SPEED_CODE" />
+                <ScalarProperty Name="CURR_CODE" ColumnName="CURR_CODE" />
+                <ScalarProperty Name="CURR_RATE" ColumnName="CURR_RATE" />
+                <ScalarProperty Name="TAX_INNER_TYPE" ColumnName="TAX_INNER_TYPE" />
+                <ScalarProperty Name="TAX_PERCENT" ColumnName="TAX_PERCENT" />
+                <ScalarProperty Name="OVER_CRED_YN" ColumnName="OVER_CRED_YN" />
+                <ScalarProperty Name="CONTROL_QTY_AMT_CODE" ColumnName="CONTROL_QTY_AMT_CODE" />
+                <ScalarProperty Name="VOUCHER_AMT" ColumnName="VOUCHER_AMT" />
+                <ScalarProperty Name="VOUCHER_NOT_INCLUDE_TAX_AMT" ColumnName="VOUCHER_NOT_INCLUDE_TAX_AMT" />
+                <ScalarProperty Name="VOUCHER_TAX_AMT" ColumnName="VOUCHER_TAX_AMT" />
+                <ScalarProperty Name="VOUCHER_INCLUDE_TAX_AMT" ColumnName="VOUCHER_INCLUDE_TAX_AMT" />
+                <ScalarProperty Name="VOUCHER_NOT_INCLUDE_TAX_AMT_NT" ColumnName="VOUCHER_NOT_INCLUDE_TAX_AMT_NT" />
+                <ScalarProperty Name="VOUCHER_TAX_AMT_NT" ColumnName="VOUCHER_TAX_AMT_NT" />
+                <ScalarProperty Name="VOUCHER_INCLUDE_TAX_AMT_NT" ColumnName="VOUCHER_INCLUDE_TAX_AMT_NT" />
+                <ScalarProperty Name="MAX_QTY" ColumnName="MAX_QTY" />
+                <ScalarProperty Name="MIN_QTY" ColumnName="MIN_QTY" />
+                <ScalarProperty Name="AUTO_CLOSE_QTY" ColumnName="AUTO_CLOSE_QTY" />
+                <ScalarProperty Name="VOUCHER_CHANGE_REASON" ColumnName="VOUCHER_CHANGE_REASON" />
+                <ScalarProperty Name="VOUCHER_REMARK" ColumnName="VOUCHER_REMARK" />
+                <ScalarProperty Name="LIAISON_ZIP_ADDR_CODE" ColumnName="LIAISON_ZIP_ADDR_CODE" />
+                <ScalarProperty Name="LIAISON_ADDR_CHI" ColumnName="LIAISON_ADDR_CHI" />
+                <ScalarProperty Name="LIAISON_NAME" ColumnName="LIAISON_NAME" />
+                <ScalarProperty Name="BUSINESS_TEL_NO" ColumnName="BUSINESS_TEL_NO" />
+                <ScalarProperty Name="BUSINESS_FAX_NO" ColumnName="BUSINESS_FAX_NO" />
+                <ScalarProperty Name="BUSINESS_EMAIL" ColumnName="BUSINESS_EMAIL" />
+                <ScalarProperty Name="BUSINESS_WEB_NO" ColumnName="BUSINESS_WEB_NO" />
+                <ScalarProperty Name="BUSINESS_NATION_CODE" ColumnName="BUSINESS_NATION_CODE" />
+                <ScalarProperty Name="DIRECT_DELIVER_CUSTOMER_YN" ColumnName="DIRECT_DELIVER_CUSTOMER_YN" />
+                <ScalarProperty Name="DELI_ZIP_CODE" ColumnName="DELI_ZIP_CODE" />
+                <ScalarProperty Name="DELI_ADDR" ColumnName="DELI_ADDR" />
+                <ScalarProperty Name="INVO_XTYPE_CODE" ColumnName="INVO_XTYPE_CODE" />
+                <ScalarProperty Name="CONTRACT_NO" ColumnName="CONTRACT_NO" />
+                <ScalarProperty Name="TRADE_COND" ColumnName="TRADE_COND" />
+                <ScalarProperty Name="SHIP_TYPE" ColumnName="SHIP_TYPE" />
+                <ScalarProperty Name="PAY_WAY" ColumnName="PAY_WAY" />
+                <ScalarProperty Name="BILL_DUE_DAYS" ColumnName="BILL_DUE_DAYS" />
+                <ScalarProperty Name="IN_FORMAT_TYPE_CODE" ColumnName="IN_FORMAT_TYPE_CODE" />
+                <ScalarProperty Name="LEVY_TAX_TYPE" ColumnName="LEVY_TAX_TYPE" />
+                <ScalarProperty Name="SALES_VOLUME" ColumnName="SALES_VOLUME" />
+                <ScalarProperty Name="SALES_VOLUME_TAX" ColumnName="SALES_VOLUME_TAX" />
+                <ScalarProperty Name="INVOICE_AMT" ColumnName="INVOICE_AMT" />
+                <ScalarProperty Name="CHANGE_DATE" ColumnName="CHANGE_DATE" />
+                <ScalarProperty Name="CRED_CHECK_PASS_YN" ColumnName="CRED_CHECK_PASS_YN" />
+                <ScalarProperty Name="NEXT_CRED_CHECK_PASS_YN" ColumnName="NEXT_CRED_CHECK_PASS_YN" />
+                <ScalarProperty Name="PROD_SCALE_NO_PRINT_COMBINE_YN" ColumnName="PROD_SCALE_NO_PRINT_COMBINE_YN" />
+                <ScalarProperty Name="SIMULATE_YN" ColumnName="SIMULATE_YN" />
+                <ScalarProperty Name="ALTER_YN" ColumnName="ALTER_YN" />
+                <ScalarProperty Name="AT_END_YN" ColumnName="AT_END_YN" />
+                <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
+                <ScalarProperty Name="CLOSE_ID" ColumnName="CLOSE_ID" />
+                <ScalarProperty Name="CLOSE_REASON_CODE" ColumnName="CLOSE_REASON_CODE" />
+                <ScalarProperty Name="VOUCHER_NO_CREATE" ColumnName="VOUCHER_NO_CREATE" />
+                <ScalarProperty Name="VOUCHER_DATE_CREATE" ColumnName="VOUCHER_DATE_CREATE" />
+                <ScalarProperty Name="VOUCHER_NO_CHANGE" ColumnName="VOUCHER_NO_CHANGE" />
+                <ScalarProperty Name="VOUCHER_DATE_CHANGE" ColumnName="VOUCHER_DATE_CHANGE" />
+                <ScalarProperty Name="OVER_BUDGET_YN" ColumnName="OVER_BUDGET_YN" />
+                <ScalarProperty Name="OVER_BUDGET_DESC" ColumnName="OVER_BUDGET_DESC" />
+                <ScalarProperty Name="BECOME_INVALID_YN" ColumnName="BECOME_INVALID_YN" />
+                <ScalarProperty Name="BECOME_INVALID_ID" ColumnName="BECOME_INVALID_ID" />
+                <ScalarProperty Name="BECOME_INVALID_DATE" ColumnName="BECOME_INVALID_DATE" />
+                <ScalarProperty Name="ENTRY_TYPE" ColumnName="ENTRY_TYPE" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_YN" ColumnName="DEPT_BOSS_ALLOW_YN" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_ID" ColumnName="DEPT_BOSS_ALLOW_ID" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_DATE" ColumnName="DEPT_BOSS_ALLOW_DATE" />
+                <ScalarProperty Name="ENTRY_ID" ColumnName="ENTRY_ID" />
+                <ScalarProperty Name="ENTRY_TIME" ColumnName="ENTRY_TIME" />
+                <ScalarProperty Name="MODIFY_ID" ColumnName="MODIFY_ID" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_1" ColumnName="VOUCHXX_FIELD_CHA_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_2" ColumnName="VOUCHXX_FIELD_CHA_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_3" ColumnName="VOUCHXX_FIELD_CHA_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_4" ColumnName="VOUCHXX_FIELD_CHA_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_5" ColumnName="VOUCHXX_FIELD_CHA_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_6" ColumnName="VOUCHXX_FIELD_CHA_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_7" ColumnName="VOUCHXX_FIELD_CHA_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_8" ColumnName="VOUCHXX_FIELD_CHA_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_9" ColumnName="VOUCHXX_FIELD_CHA_9" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_10" ColumnName="VOUCHXX_FIELD_CHA_10" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_11" ColumnName="VOUCHXX_FIELD_CHA_11" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_12" ColumnName="VOUCHXX_FIELD_CHA_12" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_13" ColumnName="VOUCHXX_FIELD_CHA_13" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_14" ColumnName="VOUCHXX_FIELD_CHA_14" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_15" ColumnName="VOUCHXX_FIELD_CHA_15" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_16" ColumnName="VOUCHXX_FIELD_CHA_16" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_1" ColumnName="VOUCHXX_FIELD_NUM_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_2" ColumnName="VOUCHXX_FIELD_NUM_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_3" ColumnName="VOUCHXX_FIELD_NUM_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_4" ColumnName="VOUCHXX_FIELD_NUM_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_5" ColumnName="VOUCHXX_FIELD_NUM_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_6" ColumnName="VOUCHXX_FIELD_NUM_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_7" ColumnName="VOUCHXX_FIELD_NUM_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_8" ColumnName="VOUCHXX_FIELD_NUM_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_1" ColumnName="VOUCHXX_FIELD_DATE_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_2" ColumnName="VOUCHXX_FIELD_DATE_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_3" ColumnName="VOUCHXX_FIELD_DATE_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_4" ColumnName="VOUCHXX_FIELD_DATE_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_5" ColumnName="VOUCHXX_FIELD_DATE_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_6" ColumnName="VOUCHXX_FIELD_DATE_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_7" ColumnName="VOUCHXX_FIELD_DATE_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_8" ColumnName="VOUCHXX_FIELD_DATE_8" />
+                <ScalarProperty Name="DATA_SEQ" ColumnName="DATA_SEQ" />
+                <ScalarProperty Name="REMARK_CREATE" ColumnName="REMARK_CREATE" />
+                <ScalarProperty Name="REMARK_CHANGE" ColumnName="REMARK_CHANGE" />
+                <ScalarProperty Name="PROD_SCALE_NO" ColumnName="PROD_SCALE_NO" />
+                <ScalarProperty Name="BATCH_NUMBER" ColumnName="BATCH_NUMBER" />
+                <ScalarProperty Name="PROD_SCALE_DESC" ColumnName="PROD_SCALE_DESC" />
+                <ScalarProperty Name="UNIT_123_CODE" ColumnName="UNIT_123_CODE" />
+                <ScalarProperty Name="RECEI_PROD_PRICE_TYPE" ColumnName="RECEI_PROD_PRICE_TYPE" />
+                <ScalarProperty Name="DETAIL_QTY" ColumnName="DETAIL_QTY" />
+                <ScalarProperty Name="COUNT_QTY" ColumnName="COUNT_QTY" />
+                <ScalarProperty Name="DETAIL_PRICE" ColumnName="DETAIL_PRICE" />
+                <ScalarProperty Name="DETAIL_AMT" ColumnName="DETAIL_AMT" />
+                <ScalarProperty Name="DETAIL_NOT_INCLUDE_TAX_AMT" ColumnName="DETAIL_NOT_INCLUDE_TAX_AMT" />
+                <ScalarProperty Name="DETAIL_TAX_AMT" ColumnName="DETAIL_TAX_AMT" />
+                <ScalarProperty Name="DETAIL_INCLUDE_TAX_AMT" ColumnName="DETAIL_INCLUDE_TAX_AMT" />
+                <ScalarProperty Name="DETAIL_NOT_INCLUDE_TAX_AMT_NT" ColumnName="DETAIL_NOT_INCLUDE_TAX_AMT_NT" />
+                <ScalarProperty Name="DETAIL_TAX_AMT_NT" ColumnName="DETAIL_TAX_AMT_NT" />
+                <ScalarProperty Name="DETAIL_INCLUDE_TAX_AMT_NT" ColumnName="DETAIL_INCLUDE_TAX_AMT_NT" />
+                <ScalarProperty Name="UNIT2_123_CODE" ColumnName="UNIT2_123_CODE" />
+                <ScalarProperty Name="DETAIL2_QTY" ColumnName="DETAIL2_QTY" />
+                <ScalarProperty Name="COUNT2_QTY" ColumnName="COUNT2_QTY" />
+                <ScalarProperty Name="RETURN_YN" ColumnName="RETURN_YN" />
+                <ScalarProperty Name="STORE_NO" ColumnName="STORE_NO" />
+                <ScalarProperty Name="PROD_EXPECT_STORE_POSITION" ColumnName="PROD_EXPECT_STORE_POSITION" />
+                <ScalarProperty Name="PRE_ACCEPT_DATE" ColumnName="PRE_ACCEPT_DATE" />
+                <ScalarProperty Name="PRE_PASS_CHECK_DATE" ColumnName="PRE_PASS_CHECK_DATE" />
+                <ScalarProperty Name="CONTRACT_NO_DATE" ColumnName="CONTRACT_NO_DATE" />
+                <ScalarProperty Name="USEAGE_CODE_AJ" ColumnName="USEAGE_CODE_AJ" />
+                <ScalarProperty Name="VOUCHER_NO_INV03020101" ColumnName="VOUCHER_NO_INV03020101" />
+                <ScalarProperty Name="VOUCHER_NO_INV13010101" ColumnName="VOUCHER_NO_INV13010101" />
+                <ScalarProperty Name="SHARE_FORM" ColumnName="SHARE_FORM" />
+                <ScalarProperty Name="SHARE_FORM_ACC_CODE" ColumnName="SHARE_FORM_ACC_CODE" />
+                <ScalarProperty Name="MANUFACTURER_NAME" ColumnName="MANUFACTURER_NAME" />
+                <ScalarProperty Name="CAPITAL_CODE" ColumnName="CAPITAL_CODE" />
+                <ScalarProperty Name="INDE_NO" ColumnName="INDE_NO" />
+                <ScalarProperty Name="COST_DEPT_NO" ColumnName="COST_DEPT_NO" />
+                <ScalarProperty Name="COST_BUSINESS_ITEM" ColumnName="COST_BUSINESS_ITEM" />
+                <ScalarProperty Name="RESELL_BUSINESS_NO" ColumnName="RESELL_BUSINESS_NO" />
+                <ScalarProperty Name="ACCT_CODE" ColumnName="ACCT_CODE" />
+                <ScalarProperty Name="DETAIL_REMARK" ColumnName="DETAIL_REMARK" />
+                <ScalarProperty Name="VOUCHER_NO_INV02010101" ColumnName="VOUCHER_NO_INV02010101" />
+                <ScalarProperty Name="UNIQ_KEY_INV02010101" ColumnName="UNIQ_KEY_INV02010101" />
+                <ScalarProperty Name="VOUCHER_NO_INV02011801" ColumnName="VOUCHER_NO_INV02011801" />
+                <ScalarProperty Name="UNIQ_KEY_INV02011801" ColumnName="UNIQ_KEY_INV02011801" />
+                <ScalarProperty Name="IN_STOCK_COUNT_QTY" ColumnName="IN_STOCK_COUNT_QTY" />
+                <ScalarProperty Name="ACCEPT_COUNT_QTY" ColumnName="ACCEPT_COUNT_QTY" />
+                <ScalarProperty Name="ACCEPT_AMT" ColumnName="ACCEPT_AMT" />
+                <ScalarProperty Name="RETURN_COUNT_QTY" ColumnName="RETURN_COUNT_QTY" />
+                <ScalarProperty Name="RETURN_AMT" ColumnName="RETURN_AMT" />
+                <ScalarProperty Name="DETAIL_CHANGE_REASON" ColumnName="DETAIL_CHANGE_REASON" />
+                <ScalarProperty Name="TRIANGLE_TRADE_DETAIL_NO" ColumnName="TRIANGLE_TRADE_DETAIL_NO" />
+                <ScalarProperty Name="AP_MAKE_COLL_REAL_DATE_CODE" ColumnName="AP_MAKE_COLL_REAL_DATE_CODE" />
+                <ScalarProperty Name="PRED_AP_DATE" ColumnName="PRED_AP_DATE" />
+                <ScalarProperty Name="CASH_INCOME_DATE" ColumnName="CASH_INCOME_DATE" />
+                <ScalarProperty Name="USC_FIELD_CHA_1" ColumnName="USC_FIELD_CHA_1" />
+                <ScalarProperty Name="USC_FIELD_CHA_2" ColumnName="USC_FIELD_CHA_2" />
+                <ScalarProperty Name="USC_FIELD_CHA_3" ColumnName="USC_FIELD_CHA_3" />
+                <ScalarProperty Name="USC_FIELD_CHA_4" ColumnName="USC_FIELD_CHA_4" />
+                <ScalarProperty Name="USC_FIELD_NUM_1" ColumnName="USC_FIELD_NUM_1" />
+                <ScalarProperty Name="USC_FIELD_NUM_2" ColumnName="USC_FIELD_NUM_2" />
+                <ScalarProperty Name="USC_FIELD_DATE_1" ColumnName="USC_FIELD_DATE_1" />
+                <ScalarProperty Name="USC_FIELD_DATE_2" ColumnName="USC_FIELD_DATE_2" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_1" ColumnName="DETAILXX_FIELD_CHA_1" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_2" ColumnName="DETAILXX_FIELD_CHA_2" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_3" ColumnName="DETAILXX_FIELD_CHA_3" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_4" ColumnName="DETAILXX_FIELD_CHA_4" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_5" ColumnName="DETAILXX_FIELD_CHA_5" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_6" ColumnName="DETAILXX_FIELD_CHA_6" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_7" ColumnName="DETAILXX_FIELD_CHA_7" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_8" ColumnName="DETAILXX_FIELD_CHA_8" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_9" ColumnName="DETAILXX_FIELD_CHA_9" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_10" ColumnName="DETAILXX_FIELD_CHA_10" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_11" ColumnName="DETAILXX_FIELD_CHA_11" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_12" ColumnName="DETAILXX_FIELD_CHA_12" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_13" ColumnName="DETAILXX_FIELD_CHA_13" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_14" ColumnName="DETAILXX_FIELD_CHA_14" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_15" ColumnName="DETAILXX_FIELD_CHA_15" />
+                <ScalarProperty Name="DETAILXX_FIELD_CHA_16" ColumnName="DETAILXX_FIELD_CHA_16" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_1" ColumnName="DETAILXX_FIELD_NUM_1" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_2" ColumnName="DETAILXX_FIELD_NUM_2" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_3" ColumnName="DETAILXX_FIELD_NUM_3" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_4" ColumnName="DETAILXX_FIELD_NUM_4" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_5" ColumnName="DETAILXX_FIELD_NUM_5" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_6" ColumnName="DETAILXX_FIELD_NUM_6" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_7" ColumnName="DETAILXX_FIELD_NUM_7" />
+                <ScalarProperty Name="DETAILXX_FIELD_NUM_8" ColumnName="DETAILXX_FIELD_NUM_8" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_1" ColumnName="DETAILXX_FIELD_DATE_1" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_2" ColumnName="DETAILXX_FIELD_DATE_2" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_3" ColumnName="DETAILXX_FIELD_DATE_3" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_4" ColumnName="DETAILXX_FIELD_DATE_4" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_5" ColumnName="DETAILXX_FIELD_DATE_5" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_6" ColumnName="DETAILXX_FIELD_DATE_6" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_7" ColumnName="DETAILXX_FIELD_DATE_7" />
+                <ScalarProperty Name="DETAILXX_FIELD_DATE_8" ColumnName="DETAILXX_FIELD_DATE_8" />
+                <ScalarProperty Name="BUDGET_NO" ColumnName="BUDGET_NO" />
+                <ScalarProperty Name="AP_GOODS_TYPE" ColumnName="AP_GOODS_TYPE" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_ACC02010101" ColumnName="BUSINESS_CASE_NO_ACC02010101" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_2_ACC02010101" ColumnName="BUSINESS_CASE_NO_2_ACC02010101" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_3_ACC02010101" ColumnName="BUSINESS_CASE_NO_3_ACC02010101" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_ACC06020101" ColumnName="BUSINESS_CASE_NO_ACC06020101" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_2_ACC06020101" ColumnName="BUSINESS_CASE_NO_2_ACC06020101" />
+                <ScalarProperty Name="BUSINESS_CASE_NO_3_ACC06020101" ColumnName="BUSINESS_CASE_NO_3_ACC06020101" />
+                <ScalarProperty Name="UNIQ_KEY_INV03020101" ColumnName="UNIQ_KEY_INV03020101" />
+                <ScalarProperty Name="OVER_PRE_PURDAY_YN" ColumnName="OVER_PRE_PURDAY_YN" />
+                <ScalarProperty Name="GIVEAWAY_YN" ColumnName="GIVEAWAY_YN" />
+                <ScalarProperty Name="DEMAND_DATE" ColumnName="DEMAND_DATE" />
+                <ScalarProperty Name="PURCH_PLAN_NAME" ColumnName="PURCH_PLAN_NAME" />
+                <ScalarProperty Name="GOVER_NO" ColumnName="GOVER_NO" />
+                <ScalarProperty Name="APP_BUSINESS_EMP_NO" ColumnName="APP_BUSINESS_EMP_NO" />
+                <ScalarProperty Name="APP_BUSINESS_DEPT_NO" ColumnName="APP_BUSINESS_DEPT_NO" />
+                <ScalarProperty Name="ASSEM_NO_1" ColumnName="ASSEM_NO_1" />
+                <ScalarProperty Name="CORELATION_CODE_1" ColumnName="CORELATION_CODE_1" />
+                <ScalarProperty Name="CORELATION_CODE_1_NAME" ColumnName="CORELATION_CODE_1_NAME" />
+                <ScalarProperty Name="ASSEM_NO_2" ColumnName="ASSEM_NO_2" />
+                <ScalarProperty Name="CORELATION_CODE_2" ColumnName="CORELATION_CODE_2" />
+                <ScalarProperty Name="CORELATION_CODE_2_NAME" ColumnName="CORELATION_CODE_2_NAME" />
+                <ScalarProperty Name="ASSEM_NO_3" ColumnName="ASSEM_NO_3" />
+                <ScalarProperty Name="CORELATION_CODE_3" ColumnName="CORELATION_CODE_3" />
+                <ScalarProperty Name="CORELATION_CODE_3_NAME" ColumnName="CORELATION_CODE_3_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UUU10010101">
+            <EntityTypeMapping TypeName="WANPIEModel.UUU10010101">
+              <MappingFragment StoreEntitySet="UUU10010101">
+                <ScalarProperty Name="UNIQ_KEY" ColumnName="UNIQ_KEY" />
+                <ScalarProperty Name="CORP_NO" ColumnName="CORP_NO" />
+                <ScalarProperty Name="BUSINESS_CORP_NO" ColumnName="BUSINESS_CORP_NO" />
+                <ScalarProperty Name="BUSINESS_CORP_NAME_CHI" ColumnName="BUSINESS_CORP_NAME_CHI" />
+                <ScalarProperty Name="BUSINESS_CORP_ABBR_CHI" ColumnName="BUSINESS_CORP_ABBR_CHI" />
+                <ScalarProperty Name="COMPANY_PERSON_TYPE_CODE" ColumnName="COMPANY_PERSON_TYPE_CODE" />
+                <ScalarProperty Name="FACTORY_YN" ColumnName="FACTORY_YN" />
+                <ScalarProperty Name="CUSTOMER_YN" ColumnName="CUSTOMER_YN" />
+                <ScalarProperty Name="BUSINESS_CORP_NAME_ENG" ColumnName="BUSINESS_CORP_NAME_ENG" />
+                <ScalarProperty Name="BUSINESS_CORP_ABBR_ENG" ColumnName="BUSINESS_CORP_ABBR_ENG" />
+                <ScalarProperty Name="INTER_EXT_TYPE_CODE" ColumnName="INTER_EXT_TYPE_CODE" />
+                <ScalarProperty Name="BUSINESS_UNIF_NO" ColumnName="BUSINESS_UNIF_NO" />
+                <ScalarProperty Name="EDI_NO" ColumnName="EDI_NO" />
+                <ScalarProperty Name="BUSINESS_TAX_NO" ColumnName="BUSINESS_TAX_NO" />
+                <ScalarProperty Name="BUSINESS_SET_UP_DATE" ColumnName="BUSINESS_SET_UP_DATE" />
+                <ScalarProperty Name="BUSINESS_CORP_TYPE_CODE" ColumnName="BUSINESS_CORP_TYPE_CODE" />
+                <ScalarProperty Name="BUSINESS_ITEM_TYPE_CODE" ColumnName="BUSINESS_ITEM_TYPE_CODE" />
+                <ScalarProperty Name="BUSINESS_ITEM_CODE" ColumnName="BUSINESS_ITEM_CODE" />
+                <ScalarProperty Name="BUINESS_CAPITAL" ColumnName="BUINESS_CAPITAL" />
+                <ScalarProperty Name="BUSINESS_CHIEF_NAME" ColumnName="BUSINESS_CHIEF_NAME" />
+                <ScalarProperty Name="EMP_NUM" ColumnName="EMP_NUM" />
+                <ScalarProperty Name="AREA_CODE" ColumnName="AREA_CODE" />
+                <ScalarProperty Name="PARTY_YN" ColumnName="PARTY_YN" />
+                <ScalarProperty Name="GROUP_NO_CORP_NO_YN" ColumnName="GROUP_NO_CORP_NO_YN" />
+                <ScalarProperty Name="GROUP_NO_CORP_NO" ColumnName="GROUP_NO_CORP_NO" />
+                <ScalarProperty Name="ORG_TYPE_CODE" ColumnName="ORG_TYPE_CODE" />
+                <ScalarProperty Name="TRANSNATIONAL_YN" ColumnName="TRANSNATIONAL_YN" />
+                <ScalarProperty Name="SHARES_CODE" ColumnName="SHARES_CODE" />
+                <ScalarProperty Name="CORPMODEL_TYPE_CODE" ColumnName="CORPMODEL_TYPE_CODE" />
+                <ScalarProperty Name="CORP_PUB_YYYYMM" ColumnName="CORP_PUB_YYYYMM" />
+                <ScalarProperty Name="CORP_TSE_YYYYMM" ColumnName="CORP_TSE_YYYYMM" />
+                <ScalarProperty Name="CORP_OTC_YYYYMM" ColumnName="CORP_OTC_YYYYMM" />
+                <ScalarProperty Name="GROUP_YN" ColumnName="GROUP_YN" />
+                <ScalarProperty Name="VOUCHER_REMARK" ColumnName="VOUCHER_REMARK" />
+                <ScalarProperty Name="CUS_TAX_INNER_TYPE_CODE" ColumnName="CUS_TAX_INNER_TYPE_CODE" />
+                <ScalarProperty Name="CUS_TAX_PERCENT" ColumnName="CUS_TAX_PERCENT" />
+                <ScalarProperty Name="CUS_TRADE_COND_CODE" ColumnName="CUS_TRADE_COND_CODE" />
+                <ScalarProperty Name="CUS_PAY_WAY_CODE" ColumnName="CUS_PAY_WAY_CODE" />
+                <ScalarProperty Name="CUS_CURR_CODE" ColumnName="CUS_CURR_CODE" />
+                <ScalarProperty Name="CUS_INVOICE_OR_ACCORD_TYPE_CODE" ColumnName="CUS_INVOICE_OR_ACCORD_TYPE_CODE" />
+                <ScalarProperty Name="SA_FORMAT_TYPE_CODE" ColumnName="SA_FORMAT_TYPE_CODE" />
+                <ScalarProperty Name="INVO_XTYPE_CODE" ColumnName="INVO_XTYPE_CODE" />
+                <ScalarProperty Name="TRAN_CODE" ColumnName="TRAN_CODE" />
+                <ScalarProperty Name="MAKE_COLL_BUSINESS" ColumnName="MAKE_COLL_BUSINESS" />
+                <ScalarProperty Name="INVOICE_FOR_BUSINESS" ColumnName="INVOICE_FOR_BUSINESS" />
+                <ScalarProperty Name="INVO_NAME_CHI" ColumnName="INVO_NAME_CHI" />
+                <ScalarProperty Name="INVO_ADDR_CHI" ColumnName="INVO_ADDR_CHI" />
+                <ScalarProperty Name="SALE_GRADE_CODE" ColumnName="SALE_GRADE_CODE" />
+                <ScalarProperty Name="ROUTE_CODE" ColumnName="ROUTE_CODE" />
+                <ScalarProperty Name="BELONG_TO_CODE" ColumnName="BELONG_TO_CODE" />
+                <ScalarProperty Name="JOIN_SELF_TYPE_CODE" ColumnName="JOIN_SELF_TYPE_CODE" />
+                <ScalarProperty Name="ORDER_MUST_YN" ColumnName="ORDER_MUST_YN" />
+                <ScalarProperty Name="ORDER_YN" ColumnName="ORDER_YN" />
+                <ScalarProperty Name="ATTACH_PAPER" ColumnName="ATTACH_PAPER" />
+                <ScalarProperty Name="SALE_CUST_PROD_NO_YN" ColumnName="SALE_CUST_PROD_NO_YN" />
+                <ScalarProperty Name="CHECK_SHEET_SEND_CODE" ColumnName="CHECK_SHEET_SEND_CODE" />
+                <ScalarProperty Name="CUS_INVOICE_BASS_CODE" ColumnName="CUS_INVOICE_BASS_CODE" />
+                <ScalarProperty Name="CUS_INVOICE_DATE_BY_DATE" ColumnName="CUS_INVOICE_DATE_BY_DATE" />
+                <ScalarProperty Name="CUS_INVOICE_DATE_BY_WEEK" ColumnName="CUS_INVOICE_DATE_BY_WEEK" />
+                <ScalarProperty Name="CUS_AR_BASS_CODE" ColumnName="CUS_AR_BASS_CODE" />
+                <ScalarProperty Name="CUS_AR_DATE_BY_DATE" ColumnName="CUS_AR_DATE_BY_DATE" />
+                <ScalarProperty Name="CUS_AR_DATE_BY_WEEK" ColumnName="CUS_AR_DATE_BY_WEEK" />
+                <ScalarProperty Name="CUS_MAKE_COLL_BASS_CODE" ColumnName="CUS_MAKE_COLL_BASS_CODE" />
+                <ScalarProperty Name="CUS_MAKE_COLL_DATE_BY_DATE" ColumnName="CUS_MAKE_COLL_DATE_BY_DATE" />
+                <ScalarProperty Name="CUS_MAKE_COLL_DATE_BY_WEEK" ColumnName="CUS_MAKE_COLL_DATE_BY_WEEK" />
+                <ScalarProperty Name="CUS_CASH_BASS_CODE" ColumnName="CUS_CASH_BASS_CODE" />
+                <ScalarProperty Name="CUS_CASH_DATE_BY_DATE" ColumnName="CUS_CASH_DATE_BY_DATE" />
+                <ScalarProperty Name="CUS_CASH_DATE_BY_WEEK" ColumnName="CUS_CASH_DATE_BY_WEEK" />
+                <ScalarProperty Name="CHEQ_PAY_DATE" ColumnName="CHEQ_PAY_DATE" />
+                <ScalarProperty Name="CUS_BILL_PAY_DAYS" ColumnName="CUS_BILL_PAY_DAYS" />
+                <ScalarProperty Name="MAKE_COLL_CASE_CODE" ColumnName="MAKE_COLL_CASE_CODE" />
+                <ScalarProperty Name="MAKE_COLL_UNUSAL_REASON" ColumnName="MAKE_COLL_UNUSAL_REASON" />
+                <ScalarProperty Name="BUSINESS_DISC_RATE" ColumnName="BUSINESS_DISC_RATE" />
+                <ScalarProperty Name="BUSINESS_START_DATE" ColumnName="BUSINESS_START_DATE" />
+                <ScalarProperty Name="BUSINESS_END_DATE" ColumnName="BUSINESS_END_DATE" />
+                <ScalarProperty Name="CRED_CONTAIN_GROUP" ColumnName="CRED_CONTAIN_GROUP" />
+                <ScalarProperty Name="CRED_CHECK_POINT" ColumnName="CRED_CHECK_POINT" />
+                <ScalarProperty Name="CRED_CHECK_POINT_END" ColumnName="CRED_CHECK_POINT_END" />
+                <ScalarProperty Name="OVER_CRED_YN" ColumnName="OVER_CRED_YN" />
+                <ScalarProperty Name="CRED_AMT" ColumnName="CRED_AMT" />
+                <ScalarProperty Name="CUS_BEGIN_BUSINESS_DATE" ColumnName="CUS_BEGIN_BUSINESS_DATE" />
+                <ScalarProperty Name="CUS_BUSINESS_STOP_DATE" ColumnName="CUS_BUSINESS_STOP_DATE" />
+                <ScalarProperty Name="CUS_BUSINESS_DISCOUNT_CODE" ColumnName="CUS_BUSINESS_DISCOUNT_CODE" />
+                <ScalarProperty Name="FAC_TAX_INNER_TYPE_CODE" ColumnName="FAC_TAX_INNER_TYPE_CODE" />
+                <ScalarProperty Name="FAC_TAX_PERCENT" ColumnName="FAC_TAX_PERCENT" />
+                <ScalarProperty Name="FAC_TRADE_COND_CODE" ColumnName="FAC_TRADE_COND_CODE" />
+                <ScalarProperty Name="FAC_PAY_WAY_CODE" ColumnName="FAC_PAY_WAY_CODE" />
+                <ScalarProperty Name="FAC_CURR_CODE" ColumnName="FAC_CURR_CODE" />
+                <ScalarProperty Name="FAC_INVOICE_OR_ACCORD_TYPE_CODE" ColumnName="FAC_INVOICE_OR_ACCORD_TYPE_CODE" />
+                <ScalarProperty Name="IN_FORMAT_TYPE_CODE" ColumnName="IN_FORMAT_TYPE_CODE" />
+                <ScalarProperty Name="PAY_COLL_BUSINESS" ColumnName="PAY_COLL_BUSINESS" />
+                <ScalarProperty Name="PUR_GRADE_CODE" ColumnName="PUR_GRADE_CODE" />
+                <ScalarProperty Name="PUR_CRED_CHECK_POINT_CODE" ColumnName="PUR_CRED_CHECK_POINT_CODE" />
+                <ScalarProperty Name="PUR_CRED_CHECK_POINT_END_CODE" ColumnName="PUR_CRED_CHECK_POINT_END_CODE" />
+                <ScalarProperty Name="OVER_PUR_CRED_YN" ColumnName="OVER_PUR_CRED_YN" />
+                <ScalarProperty Name="PUR_CRED_AMT" ColumnName="PUR_CRED_AMT" />
+                <ScalarProperty Name="FAC_INVOICE_BASS_CODE" ColumnName="FAC_INVOICE_BASS_CODE" />
+                <ScalarProperty Name="FAC_INVOICE_DATE_BY_DATE" ColumnName="FAC_INVOICE_DATE_BY_DATE" />
+                <ScalarProperty Name="FAC_INVOICE_DATE_BY_WEEK" ColumnName="FAC_INVOICE_DATE_BY_WEEK" />
+                <ScalarProperty Name="FAC_AP_BASS_CODE" ColumnName="FAC_AP_BASS_CODE" />
+                <ScalarProperty Name="FAC_AP_DATE_BY_DATE" ColumnName="FAC_AP_DATE_BY_DATE" />
+                <ScalarProperty Name="FAC_AP_DATE_BY_WEEK" ColumnName="FAC_AP_DATE_BY_WEEK" />
+                <ScalarProperty Name="FAC_MAKE_COLL_BASS_CODE" ColumnName="FAC_MAKE_COLL_BASS_CODE" />
+                <ScalarProperty Name="FAC_MAKE_COLL_DATE_BY_DATE" ColumnName="FAC_MAKE_COLL_DATE_BY_DATE" />
+                <ScalarProperty Name="FAC_MAKE_COLL_DATE_BY_WEEK" ColumnName="FAC_MAKE_COLL_DATE_BY_WEEK" />
+                <ScalarProperty Name="FAC_CASH_BASS_CODE" ColumnName="FAC_CASH_BASS_CODE" />
+                <ScalarProperty Name="FAC_CASH_DATE_BY_DATE" ColumnName="FAC_CASH_DATE_BY_DATE" />
+                <ScalarProperty Name="FAC_CASH_DATE_BY_WEEK" ColumnName="FAC_CASH_DATE_BY_WEEK" />
+                <ScalarProperty Name="REMIT_MONEY_YN" ColumnName="REMIT_MONEY_YN" />
+                <ScalarProperty Name="REMIT_MONEY_BANK_ACCT_NO" ColumnName="REMIT_MONEY_BANK_ACCT_NO" />
+                <ScalarProperty Name="REMIT_MONEY_BANK_NO" ColumnName="REMIT_MONEY_BANK_NO" />
+                <ScalarProperty Name="REMIT_MONEY_NAME" ColumnName="REMIT_MONEY_NAME" />
+                <ScalarProperty Name="CUS_MONEY_YN" ColumnName="CUS_MONEY_YN" />
+                <ScalarProperty Name="CUS_MONEY_BANK_ACCT_NO" ColumnName="CUS_MONEY_BANK_ACCT_NO" />
+                <ScalarProperty Name="CUS_MONEY_BANK_NO" ColumnName="CUS_MONEY_BANK_NO" />
+                <ScalarProperty Name="CUS_MONEY_NAME" ColumnName="CUS_MONEY_NAME" />
+                <ScalarProperty Name="BILL_TITLE" ColumnName="BILL_TITLE" />
+                <ScalarProperty Name="PAY_CHEQ_PAY_DATE" ColumnName="PAY_CHEQ_PAY_DATE" />
+                <ScalarProperty Name="PROC_COST_BURDEN_TYPE_CODE" ColumnName="PROC_COST_BURDEN_TYPE_CODE" />
+                <ScalarProperty Name="FAC_BEGIN_BUSINESS_DATE" ColumnName="FAC_BEGIN_BUSINESS_DATE" />
+                <ScalarProperty Name="FAC_BUSINESS_STOP_DATE" ColumnName="FAC_BUSINESS_STOP_DATE" />
+                <ScalarProperty Name="FAC_BUSINESS_DISCOUNT_CODE" ColumnName="FAC_BUSINESS_DISCOUNT_CODE" />
+                <ScalarProperty Name="BUSINESS_TEL_NO" ColumnName="BUSINESS_TEL_NO" />
+                <ScalarProperty Name="BUSINESS_FAX_NO" ColumnName="BUSINESS_FAX_NO" />
+                <ScalarProperty Name="BUSINESS_WEB_NO" ColumnName="BUSINESS_WEB_NO" />
+                <ScalarProperty Name="BUSINESS_EMAIL" ColumnName="BUSINESS_EMAIL" />
+                <ScalarProperty Name="BUSINESS_ZIP_ADDR_CODE" ColumnName="BUSINESS_ZIP_ADDR_CODE" />
+                <ScalarProperty Name="BUSINESS_ADDR_CHI" ColumnName="BUSINESS_ADDR_CHI" />
+                <ScalarProperty Name="BUSINESS_ADDR_ENG" ColumnName="BUSINESS_ADDR_ENG" />
+                <ScalarProperty Name="LIAISON_ZIP_ADDR_CODE" ColumnName="LIAISON_ZIP_ADDR_CODE" />
+                <ScalarProperty Name="LIAISON_ADDR_CHI" ColumnName="LIAISON_ADDR_CHI" />
+                <ScalarProperty Name="LIAISON_NAME" ColumnName="LIAISON_NAME" />
+                <ScalarProperty Name="LIAISON_ADDR_ENG" ColumnName="LIAISON_ADDR_ENG" />
+                <ScalarProperty Name="ACCOUNT_ZIP_ADDR_CODE" ColumnName="ACCOUNT_ZIP_ADDR_CODE" />
+                <ScalarProperty Name="ACCOUNT_ADDR" ColumnName="ACCOUNT_ADDR" />
+                <ScalarProperty Name="BUSINESS_ACCT_NAME" ColumnName="BUSINESS_ACCT_NAME" />
+                <ScalarProperty Name="BUSINESS_ACCT_TEL" ColumnName="BUSINESS_ACCT_TEL" />
+                <ScalarProperty Name="BUSINESS_CASH_NAME" ColumnName="BUSINESS_CASH_NAME" />
+                <ScalarProperty Name="BUSINESS_CASH_TEL" ColumnName="BUSINESS_CASH_TEL" />
+                <ScalarProperty Name="DELI_ZIP_ADDR_CODE" ColumnName="DELI_ZIP_ADDR_CODE" />
+                <ScalarProperty Name="DELI_ADDR" ColumnName="DELI_ADDR" />
+                <ScalarProperty Name="DELI_NAME" ColumnName="DELI_NAME" />
+                <ScalarProperty Name="DELI_TEL" ColumnName="DELI_TEL" />
+                <ScalarProperty Name="APPOINT_INVOICE_CORP_NO" ColumnName="APPOINT_INVOICE_CORP_NO" />
+                <ScalarProperty Name="CLIENT_PRICE_TACTIC" ColumnName="CLIENT_PRICE_TACTIC" />
+                <ScalarProperty Name="REPLY_STAMPS_YN" ColumnName="REPLY_STAMPS_YN" />
+                <ScalarProperty Name="PROD_EXPECT_STORE_NO" ColumnName="PROD_EXPECT_STORE_NO" />
+                <ScalarProperty Name="CLOSE_YN" ColumnName="CLOSE_YN" />
+                <ScalarProperty Name="STOP_USE_DATE" ColumnName="STOP_USE_DATE" />
+                <ScalarProperty Name="DEL_YN" ColumnName="DEL_YN" />
+                <ScalarProperty Name="LIMITS_OF_AUTHORITY_CODE" ColumnName="LIMITS_OF_AUTHORITY_CODE" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_YN" ColumnName="DEPT_BOSS_ALLOW_YN" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_ID" ColumnName="DEPT_BOSS_ALLOW_ID" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_DATE" ColumnName="DEPT_BOSS_ALLOW_DATE" />
+                <ScalarProperty Name="ENTRY_ID" ColumnName="ENTRY_ID" />
+                <ScalarProperty Name="ENTRY_TIME" ColumnName="ENTRY_TIME" />
+                <ScalarProperty Name="MODIFY_ID" ColumnName="MODIFY_ID" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="ENTRY_TYPE" ColumnName="ENTRY_TYPE" />
+                <ScalarProperty Name="USC_FIELD_CHA_1" ColumnName="USC_FIELD_CHA_1" />
+                <ScalarProperty Name="USC_FIELD_CHA_2" ColumnName="USC_FIELD_CHA_2" />
+                <ScalarProperty Name="USC_FIELD_CHA_3" ColumnName="USC_FIELD_CHA_3" />
+                <ScalarProperty Name="USC_FIELD_CHA_4" ColumnName="USC_FIELD_CHA_4" />
+                <ScalarProperty Name="USC_FIELD_CHA_5" ColumnName="USC_FIELD_CHA_5" />
+                <ScalarProperty Name="USC_FIELD_CHA_6" ColumnName="USC_FIELD_CHA_6" />
+                <ScalarProperty Name="USC_FIELD_CHA_7" ColumnName="USC_FIELD_CHA_7" />
+                <ScalarProperty Name="USC_FIELD_CHA_8" ColumnName="USC_FIELD_CHA_8" />
+                <ScalarProperty Name="USC_FIELD_CHA_9" ColumnName="USC_FIELD_CHA_9" />
+                <ScalarProperty Name="USC_FIELD_CHA_10" ColumnName="USC_FIELD_CHA_10" />
+                <ScalarProperty Name="USC_FIELD_NUM_1" ColumnName="USC_FIELD_NUM_1" />
+                <ScalarProperty Name="USC_FIELD_NUM_2" ColumnName="USC_FIELD_NUM_2" />
+                <ScalarProperty Name="USC_FIELD_DATE_1" ColumnName="USC_FIELD_DATE_1" />
+                <ScalarProperty Name="USC_FIELD_DATE_2" ColumnName="USC_FIELD_DATE_2" />
+                <ScalarProperty Name="FIELD_CHA_1" ColumnName="FIELD_CHA_1" />
+                <ScalarProperty Name="FIELD_CHA_2" ColumnName="FIELD_CHA_2" />
+                <ScalarProperty Name="FIELD_CHA_3" ColumnName="FIELD_CHA_3" />
+                <ScalarProperty Name="FIELD_CHA_4" ColumnName="FIELD_CHA_4" />
+                <ScalarProperty Name="FIELD_CHA_5" ColumnName="FIELD_CHA_5" />
+                <ScalarProperty Name="FIELD_CHA_6" ColumnName="FIELD_CHA_6" />
+                <ScalarProperty Name="FIELD_CHA_7" ColumnName="FIELD_CHA_7" />
+                <ScalarProperty Name="FIELD_CHA_8" ColumnName="FIELD_CHA_8" />
+                <ScalarProperty Name="FIELD_CHA_9" ColumnName="FIELD_CHA_9" />
+                <ScalarProperty Name="FIELD_CHA_10" ColumnName="FIELD_CHA_10" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_1" ColumnName="VOUCHXX_FIELD_CHA_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_2" ColumnName="VOUCHXX_FIELD_CHA_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_3" ColumnName="VOUCHXX_FIELD_CHA_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_4" ColumnName="VOUCHXX_FIELD_CHA_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_5" ColumnName="VOUCHXX_FIELD_CHA_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_6" ColumnName="VOUCHXX_FIELD_CHA_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_7" ColumnName="VOUCHXX_FIELD_CHA_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_8" ColumnName="VOUCHXX_FIELD_CHA_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_9" ColumnName="VOUCHXX_FIELD_CHA_9" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_10" ColumnName="VOUCHXX_FIELD_CHA_10" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_11" ColumnName="VOUCHXX_FIELD_CHA_11" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_12" ColumnName="VOUCHXX_FIELD_CHA_12" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_13" ColumnName="VOUCHXX_FIELD_CHA_13" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_14" ColumnName="VOUCHXX_FIELD_CHA_14" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_15" ColumnName="VOUCHXX_FIELD_CHA_15" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_16" ColumnName="VOUCHXX_FIELD_CHA_16" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_1" ColumnName="VOUCHXX_FIELD_NUM_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_2" ColumnName="VOUCHXX_FIELD_NUM_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_3" ColumnName="VOUCHXX_FIELD_NUM_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_4" ColumnName="VOUCHXX_FIELD_NUM_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_5" ColumnName="VOUCHXX_FIELD_NUM_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_6" ColumnName="VOUCHXX_FIELD_NUM_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_7" ColumnName="VOUCHXX_FIELD_NUM_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_8" ColumnName="VOUCHXX_FIELD_NUM_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_1" ColumnName="VOUCHXX_FIELD_DATE_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_2" ColumnName="VOUCHXX_FIELD_DATE_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_3" ColumnName="VOUCHXX_FIELD_DATE_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_4" ColumnName="VOUCHXX_FIELD_DATE_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_5" ColumnName="VOUCHXX_FIELD_DATE_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_6" ColumnName="VOUCHXX_FIELD_DATE_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_7" ColumnName="VOUCHXX_FIELD_DATE_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_8" ColumnName="VOUCHXX_FIELD_DATE_8" />
+                <ScalarProperty Name="LIAISON_BUSINESS_TEL_NO" ColumnName="LIAISON_BUSINESS_TEL_NO" />
+                <ScalarProperty Name="LIAISON_BUSINESS_FAX_NO" ColumnName="LIAISON_BUSINESS_FAX_NO" />
+                <ScalarProperty Name="LABOR_IDENTITY_YN" ColumnName="LABOR_IDENTITY_YN" />
+                <ScalarProperty Name="LABOR_ID" ColumnName="LABOR_ID" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ZIP_PERM_ADDR_CODE" ColumnName="ZIP_PERM_ADDR_CODE" />
+                <ScalarProperty Name="PERM_ADDR" ColumnName="PERM_ADDR" />
+                <ScalarProperty Name="BANK_NAME_ENG" ColumnName="BANK_NAME_ENG" />
+                <ScalarProperty Name="SWIFT_CODE" ColumnName="SWIFT_CODE" />
+                <ScalarProperty Name="NATION_TAIWAN_TAX_CODE" ColumnName="NATION_TAIWAN_TAX_CODE" />
+                <ScalarProperty Name="BANK_ADDR_ENG" ColumnName="BANK_ADDR_ENG" />
+                <ScalarProperty Name="SUB_FORMAT_TYPE" ColumnName="SUB_FORMAT_TYPE" />
+                <ScalarProperty Name="INVO35_TRANS_TYPE" ColumnName="INVO35_TRANS_TYPE" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_1" ColumnName="BUSINESS_CORP_NO_KIND_1" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_2" ColumnName="BUSINESS_CORP_NO_KIND_2" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_3" ColumnName="BUSINESS_CORP_NO_KIND_3" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_4" ColumnName="BUSINESS_CORP_NO_KIND_4" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_5" ColumnName="BUSINESS_CORP_NO_KIND_5" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_6" ColumnName="BUSINESS_CORP_NO_KIND_6" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_7" ColumnName="BUSINESS_CORP_NO_KIND_7" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_8" ColumnName="BUSINESS_CORP_NO_KIND_8" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_9" ColumnName="BUSINESS_CORP_NO_KIND_9" />
+                <ScalarProperty Name="BUSINESS_CORP_NO_KIND_10" ColumnName="BUSINESS_CORP_NO_KIND_10" />
+                <ScalarProperty Name="CUST_GRADE" ColumnName="CUST_GRADE" />
+                <ScalarProperty Name="MAIL_THE_WAY" ColumnName="MAIL_THE_WAY" />
+                <ScalarProperty Name="VIRTUAL_MASK_BANK_ACCT_NO" ColumnName="VIRTUAL_MASK_BANK_ACCT_NO" />
+                <ScalarProperty Name="ISR_MIG_EMAIL" ColumnName="ISR_MIG_EMAIL" />
+                <ScalarProperty Name="INVO_ZIP_ADDR_CODE" ColumnName="INVO_ZIP_ADDR_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UUU20010101">
+            <EntityTypeMapping TypeName="WANPIEModel.UUU20010101">
+              <MappingFragment StoreEntitySet="UUU20010101">
+                <ScalarProperty Name="UNIQ_KEY" ColumnName="UNIQ_KEY" />
+                <ScalarProperty Name="CORP_NO" ColumnName="CORP_NO" />
+                <ScalarProperty Name="PROD_NO" ColumnName="PROD_NO" />
+                <ScalarProperty Name="PROD_NAME_CHI" ColumnName="PROD_NAME_CHI" />
+                <ScalarProperty Name="PROD_NAME_ENG" ColumnName="PROD_NAME_ENG" />
+                <ScalarProperty Name="PROD_NAME_CHI_SECRET" ColumnName="PROD_NAME_CHI_SECRET" />
+                <ScalarProperty Name="PROD_ABBR_CHI" ColumnName="PROD_ABBR_CHI" />
+                <ScalarProperty Name="PROD_ABBR_ENG" ColumnName="PROD_ABBR_ENG" />
+                <ScalarProperty Name="PROD_NAME_INVO" ColumnName="PROD_NAME_INVO" />
+                <ScalarProperty Name="PROD_SCALE_DESC" ColumnName="PROD_SCALE_DESC" />
+                <ScalarProperty Name="PROD_TYPE" ColumnName="PROD_TYPE" />
+                <ScalarProperty Name="PROD_KIND_CODE" ColumnName="PROD_KIND_CODE" />
+                <ScalarProperty Name="PROD_GRADE_CODE" ColumnName="PROD_GRADE_CODE" />
+                <ScalarProperty Name="PROD_BRAND" ColumnName="PROD_BRAND" />
+                <ScalarProperty Name="ISBN_ISSN_CODE" ColumnName="ISBN_ISSN_CODE" />
+                <ScalarProperty Name="MODEL_CODE" ColumnName="MODEL_CODE" />
+                <ScalarProperty Name="ORI_CORP_CODE" ColumnName="ORI_CORP_CODE" />
+                <ScalarProperty Name="BAR_CODE" ColumnName="BAR_CODE" />
+                <ScalarProperty Name="CCC_CODE" ColumnName="CCC_CODE" />
+                <ScalarProperty Name="CIS_CODE" ColumnName="CIS_CODE" />
+                <ScalarProperty Name="LAW_ARTICLE" ColumnName="LAW_ARTICLE" />
+                <ScalarProperty Name="ACCT_TYPE_CODE" ColumnName="ACCT_TYPE_CODE" />
+                <ScalarProperty Name="PROD_NO_TAX_YN" ColumnName="PROD_NO_TAX_YN" />
+                <ScalarProperty Name="PROD_EXPECT_STORE_NO" ColumnName="PROD_EXPECT_STORE_NO" />
+                <ScalarProperty Name="PROD_EXPECT_STORE_POSITION" ColumnName="PROD_EXPECT_STORE_POSITION" />
+                <ScalarProperty Name="PROD_STORE_YN" ColumnName="PROD_STORE_YN" />
+                <ScalarProperty Name="BATCH_NUMBER_CONTROL_YN" ColumnName="BATCH_NUMBER_CONTROL_YN" />
+                <ScalarProperty Name="MACHINE_YN" ColumnName="MACHINE_YN" />
+                <ScalarProperty Name="ABC_LEVEL" ColumnName="ABC_LEVEL" />
+                <ScalarProperty Name="PROD_IMPORT_GRADE_CODE" ColumnName="PROD_IMPORT_GRADE_CODE" />
+                <ScalarProperty Name="MAJOR_PACKAGING" ColumnName="MAJOR_PACKAGING" />
+                <ScalarProperty Name="MAJOR_PACKAGING_QTY" ColumnName="MAJOR_PACKAGING_QTY" />
+                <ScalarProperty Name="MAJOR_PACKING_CODE" ColumnName="MAJOR_PACKING_CODE" />
+                <ScalarProperty Name="PROD_PACKAGE_QTY" ColumnName="PROD_PACKAGE_QTY" />
+                <ScalarProperty Name="PROD_CARRYING_COST_PER" ColumnName="PROD_CARRYING_COST_PER" />
+                <ScalarProperty Name="GROUP_YN" ColumnName="GROUP_YN" />
+                <ScalarProperty Name="PROD_PE_MUST_CODE" ColumnName="PROD_PE_MUST_CODE" />
+                <ScalarProperty Name="NO_MOVE_DEFAULT_DAYS" ColumnName="NO_MOVE_DEFAULT_DAYS" />
+                <ScalarProperty Name="PROD_DISCOUNT_CODE" ColumnName="PROD_DISCOUNT_CODE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="PROD_KIND_1_CODE" ColumnName="PROD_KIND_1_CODE" />
+                <ScalarProperty Name="PROD_KIND_2_CODE" ColumnName="PROD_KIND_2_CODE" />
+                <ScalarProperty Name="PROD_KIND_3_CODE" ColumnName="PROD_KIND_3_CODE" />
+                <ScalarProperty Name="PROD_KIND_4_CODE" ColumnName="PROD_KIND_4_CODE" />
+                <ScalarProperty Name="PROD_KIND_5_CODE" ColumnName="PROD_KIND_5_CODE" />
+                <ScalarProperty Name="PROD_KIND_6_CODE" ColumnName="PROD_KIND_6_CODE" />
+                <ScalarProperty Name="PROD_KIND_7_CODE" ColumnName="PROD_KIND_7_CODE" />
+                <ScalarProperty Name="PROD_KIND_8_CODE" ColumnName="PROD_KIND_8_CODE" />
+                <ScalarProperty Name="PROD_KIND_9_CODE" ColumnName="PROD_KIND_9_CODE" />
+                <ScalarProperty Name="PROD_KIND_10_CODE" ColumnName="PROD_KIND_10_CODE" />
+                <ScalarProperty Name="QC_YN" ColumnName="QC_YN" />
+                <ScalarProperty Name="CHECK_LIST_PRODUCE_TYPE_CODE" ColumnName="CHECK_LIST_PRODUCE_TYPE_CODE" />
+                <ScalarProperty Name="PART_FULL_TYPE" ColumnName="PART_FULL_TYPE" />
+                <ScalarProperty Name="TEST_RESULT_RECORD_TYPE_CODE" ColumnName="TEST_RESULT_RECORD_TYPE_CODE" />
+                <ScalarProperty Name="PROD_CHECK_DAY" ColumnName="PROD_CHECK_DAY" />
+                <ScalarProperty Name="TEST_CYCLE_MM_DAY_TYPE_CODE" ColumnName="TEST_CYCLE_MM_DAY_TYPE_CODE" />
+                <ScalarProperty Name="TEST_CYCLE_MM_OR_DD" ColumnName="TEST_CYCLE_MM_OR_DD" />
+                <ScalarProperty Name="TAKE_STOCK_CYCLE_CODE" ColumnName="TAKE_STOCK_CYCLE_CODE" />
+                <ScalarProperty Name="TEST_ITEM_FORM" ColumnName="TEST_ITEM_FORM" />
+                <ScalarProperty Name="TEST_STAND_NO_SECRET" ColumnName="TEST_STAND_NO_SECRET" />
+                <ScalarProperty Name="PROD_MAIN_SALE_DEPT_NO" ColumnName="PROD_MAIN_SALE_DEPT_NO" />
+                <ScalarProperty Name="OUT_OF_STOCK_REASON_CODE" ColumnName="OUT_OF_STOCK_REASON_CODE" />
+                <ScalarProperty Name="LAUNCH_DATE" ColumnName="LAUNCH_DATE" />
+                <ScalarProperty Name="BEG_DATE" ColumnName="BEG_DATE" />
+                <ScalarProperty Name="PROD_LIMIT_DATE" ColumnName="PROD_LIMIT_DATE" />
+                <ScalarProperty Name="INDE_NO" ColumnName="INDE_NO" />
+                <ScalarProperty Name="BUSINESS_ITEM_CODE" ColumnName="BUSINESS_ITEM_CODE" />
+                <ScalarProperty Name="PROD_SCALE_NO_YN" ColumnName="PROD_SCALE_NO_YN" />
+                <ScalarProperty Name="PROD_SCALE_NO_FORMAT_CODE" ColumnName="PROD_SCALE_NO_FORMAT_CODE" />
+                <ScalarProperty Name="BONDED_GOODS_YN" ColumnName="BONDED_GOODS_YN" />
+                <ScalarProperty Name="CHECK_ALLOW_RATE" ColumnName="CHECK_ALLOW_RATE" />
+                <ScalarProperty Name="BOM_NO_FINISHED" ColumnName="BOM_NO_FINISHED" />
+                <ScalarProperty Name="AUTHOR_NAMES" ColumnName="AUTHOR_NAMES" />
+                <ScalarProperty Name="TRANSLATOR_NAMES" ColumnName="TRANSLATOR_NAMES" />
+                <ScalarProperty Name="WRITE_MUSIC_NAMES" ColumnName="WRITE_MUSIC_NAMES" />
+                <ScalarProperty Name="WRITE_WORDS_NAMES" ColumnName="WRITE_WORDS_NAMES" />
+                <ScalarProperty Name="LEAD_SINGER_NAMES" ColumnName="LEAD_SINGER_NAMES" />
+                <ScalarProperty Name="PUBLISH_CORP" ColumnName="PUBLISH_CORP" />
+                <ScalarProperty Name="GENERAL_MARKET_CORP" ColumnName="GENERAL_MARKET_CORP" />
+                <ScalarProperty Name="ISSUING_DATE" ColumnName="ISSUING_DATE" />
+                <ScalarProperty Name="CLOSE_YN" ColumnName="CLOSE_YN" />
+                <ScalarProperty Name="STOP_USE_DATE" ColumnName="STOP_USE_DATE" />
+                <ScalarProperty Name="DEL_YN" ColumnName="DEL_YN" />
+                <ScalarProperty Name="LIMITS_OF_AUTHORITY_CODE" ColumnName="LIMITS_OF_AUTHORITY_CODE" />
+                <ScalarProperty Name="PROD_CLEARING_YN" ColumnName="PROD_CLEARING_YN" />
+                <ScalarProperty Name="CLEARING_MARK_DATE" ColumnName="CLEARING_MARK_DATE" />
+                <ScalarProperty Name="PROD_SHARE_YN" ColumnName="PROD_SHARE_YN" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_YN" ColumnName="DEPT_BOSS_ALLOW_YN" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_ID" ColumnName="DEPT_BOSS_ALLOW_ID" />
+                <ScalarProperty Name="DEPT_BOSS_ALLOW_DATE" ColumnName="DEPT_BOSS_ALLOW_DATE" />
+                <ScalarProperty Name="ENTRY_ID" ColumnName="ENTRY_ID" />
+                <ScalarProperty Name="ENTRY_TIME" ColumnName="ENTRY_TIME" />
+                <ScalarProperty Name="MODIFY_ID" ColumnName="MODIFY_ID" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="ENTRY_TYPE" ColumnName="ENTRY_TYPE" />
+                <ScalarProperty Name="USC_FIELD_CHA_1" ColumnName="USC_FIELD_CHA_1" />
+                <ScalarProperty Name="USC_FIELD_CHA_2" ColumnName="USC_FIELD_CHA_2" />
+                <ScalarProperty Name="USC_FIELD_CHA_3" ColumnName="USC_FIELD_CHA_3" />
+                <ScalarProperty Name="USC_FIELD_CHA_4" ColumnName="USC_FIELD_CHA_4" />
+                <ScalarProperty Name="USC_FIELD_CHA_5" ColumnName="USC_FIELD_CHA_5" />
+                <ScalarProperty Name="USC_FIELD_CHA_6" ColumnName="USC_FIELD_CHA_6" />
+                <ScalarProperty Name="USC_FIELD_CHA_7" ColumnName="USC_FIELD_CHA_7" />
+                <ScalarProperty Name="USC_FIELD_CHA_8" ColumnName="USC_FIELD_CHA_8" />
+                <ScalarProperty Name="USC_FIELD_CHA_9" ColumnName="USC_FIELD_CHA_9" />
+                <ScalarProperty Name="USC_FIELD_CHA_10" ColumnName="USC_FIELD_CHA_10" />
+                <ScalarProperty Name="USC_FIELD_NUM_1" ColumnName="USC_FIELD_NUM_1" />
+                <ScalarProperty Name="USC_FIELD_NUM_2" ColumnName="USC_FIELD_NUM_2" />
+                <ScalarProperty Name="USC_FIELD_DATE_1" ColumnName="USC_FIELD_DATE_1" />
+                <ScalarProperty Name="USC_FIELD_DATE_2" ColumnName="USC_FIELD_DATE_2" />
+                <ScalarProperty Name="FIELD_CHA_1" ColumnName="FIELD_CHA_1" />
+                <ScalarProperty Name="FIELD_CHA_2" ColumnName="FIELD_CHA_2" />
+                <ScalarProperty Name="FIELD_CHA_3" ColumnName="FIELD_CHA_3" />
+                <ScalarProperty Name="FIELD_CHA_4" ColumnName="FIELD_CHA_4" />
+                <ScalarProperty Name="FIELD_CHA_5" ColumnName="FIELD_CHA_5" />
+                <ScalarProperty Name="FIELD_CHA_6" ColumnName="FIELD_CHA_6" />
+                <ScalarProperty Name="FIELD_CHA_7" ColumnName="FIELD_CHA_7" />
+                <ScalarProperty Name="FIELD_CHA_8" ColumnName="FIELD_CHA_8" />
+                <ScalarProperty Name="FIELD_CHA_9" ColumnName="FIELD_CHA_9" />
+                <ScalarProperty Name="FIELD_CHA_10" ColumnName="FIELD_CHA_10" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_1" ColumnName="VOUCHXX_FIELD_CHA_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_2" ColumnName="VOUCHXX_FIELD_CHA_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_3" ColumnName="VOUCHXX_FIELD_CHA_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_4" ColumnName="VOUCHXX_FIELD_CHA_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_5" ColumnName="VOUCHXX_FIELD_CHA_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_6" ColumnName="VOUCHXX_FIELD_CHA_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_7" ColumnName="VOUCHXX_FIELD_CHA_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_8" ColumnName="VOUCHXX_FIELD_CHA_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_9" ColumnName="VOUCHXX_FIELD_CHA_9" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_10" ColumnName="VOUCHXX_FIELD_CHA_10" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_11" ColumnName="VOUCHXX_FIELD_CHA_11" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_12" ColumnName="VOUCHXX_FIELD_CHA_12" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_13" ColumnName="VOUCHXX_FIELD_CHA_13" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_14" ColumnName="VOUCHXX_FIELD_CHA_14" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_15" ColumnName="VOUCHXX_FIELD_CHA_15" />
+                <ScalarProperty Name="VOUCHXX_FIELD_CHA_16" ColumnName="VOUCHXX_FIELD_CHA_16" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_1" ColumnName="VOUCHXX_FIELD_NUM_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_2" ColumnName="VOUCHXX_FIELD_NUM_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_3" ColumnName="VOUCHXX_FIELD_NUM_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_4" ColumnName="VOUCHXX_FIELD_NUM_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_5" ColumnName="VOUCHXX_FIELD_NUM_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_6" ColumnName="VOUCHXX_FIELD_NUM_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_7" ColumnName="VOUCHXX_FIELD_NUM_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_NUM_8" ColumnName="VOUCHXX_FIELD_NUM_8" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_1" ColumnName="VOUCHXX_FIELD_DATE_1" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_2" ColumnName="VOUCHXX_FIELD_DATE_2" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_3" ColumnName="VOUCHXX_FIELD_DATE_3" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_4" ColumnName="VOUCHXX_FIELD_DATE_4" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_5" ColumnName="VOUCHXX_FIELD_DATE_5" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_6" ColumnName="VOUCHXX_FIELD_DATE_6" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_7" ColumnName="VOUCHXX_FIELD_DATE_7" />
+                <ScalarProperty Name="VOUCHXX_FIELD_DATE_8" ColumnName="VOUCHXX_FIELD_DATE_8" />
+                <ScalarProperty Name="CAP_PER_UNIFY_CODE" ColumnName="CAP_PER_UNIFY_CODE" />
+                <ScalarProperty Name="PUR_EQUAL_QTY_YN" ColumnName="PUR_EQUAL_QTY_YN" />
+                <ScalarProperty Name="ORI_PLACE" ColumnName="ORI_PLACE" />
+                <ScalarProperty Name="PROD_DEPT_NO" ColumnName="PROD_DEPT_NO" />
+                <ScalarProperty Name="VALID_YMD_TYPE" ColumnName="VALID_YMD_TYPE" />
+                <ScalarProperty Name="VALID_YEARS" ColumnName="VALID_YEARS" />
+                <ScalarProperty Name="VALID_MONTHS" ColumnName="VALID_MONTHS" />
+                <ScalarProperty Name="VALID_DAYS" ColumnName="VALID_DAYS" />
+                <ScalarProperty Name="VALID_COUNT_DAYS" ColumnName="VALID_COUNT_DAYS" />
+                <ScalarProperty Name="TASTING_DAYS" ColumnName="TASTING_DAYS" />
+                <ScalarProperty Name="MAX_QTY" ColumnName="MAX_QTY" />
+                <ScalarProperty Name="SALE_PE_MUST_CODE" ColumnName="SALE_PE_MUST_CODE" />
+                <ScalarProperty Name="DESIGN_PROD_SHEET" ColumnName="DESIGN_PROD_SHEET" />
+                <ScalarProperty Name="PROD_KIND_SIGN_CODE" ColumnName="PROD_KIND_SIGN_CODE" />
+                <ScalarProperty Name="PROD_KIND_POS_CODE" ColumnName="PROD_KIND_POS_CODE" />
+                <ScalarProperty Name="BATCH_NUMBER_VIRTUAL_YN" ColumnName="BATCH_NUMBER_VIRTUAL_YN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

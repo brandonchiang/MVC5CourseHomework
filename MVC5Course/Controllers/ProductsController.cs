@@ -13,7 +13,7 @@ namespace MVC5Course.Controllers
 {
     public class ProductsController : Controller
     {
-        private FabricsEntities2 db = new FabricsEntities2();
+        private FabricsEntities db = new FabricsEntities();
 
         // GET: Products
         public ActionResult Index()
@@ -83,7 +83,7 @@ namespace MVC5Course.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(product).State = EntityState.Modified;  //老師說，這是很差的寫法
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

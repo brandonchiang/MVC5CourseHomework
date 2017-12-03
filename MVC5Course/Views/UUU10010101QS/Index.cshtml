@@ -1,0 +1,1473 @@
+﻿@model IEnumerable<MVC5Course.Models.UUU10010101>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIQ_KEY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NAME_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_ABBR_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPANY_PERSON_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACTORY_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NAME_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_ABBR_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTER_EXT_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_UNIF_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EDI_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_TAX_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_SET_UP_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ITEM_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ITEM_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUINESS_CAPITAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CHIEF_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_NUM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AREA_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PARTY_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GROUP_NO_CORP_NO_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GROUP_NO_CORP_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORG_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANSNATIONAL_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHARES_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CORPMODEL_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CORP_PUB_YYYYMM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CORP_TSE_YYYYMM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CORP_OTC_YYYYMM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GROUP_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHER_REMARK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_TAX_INNER_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_TAX_PERCENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_TRADE_COND_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_PAY_WAY_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_CURR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_INVOICE_OR_ACCORD_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SA_FORMAT_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVO_XTYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRAN_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE_COLL_BUSINESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVOICE_FOR_BUSINESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVO_NAME_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVO_ADDR_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALE_GRADE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROUTE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BELONG_TO_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOIN_SELF_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_MUST_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ATTACH_PAPER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALE_CUST_PROD_NO_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHECK_SHEET_SEND_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_INVOICE_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_INVOICE_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_INVOICE_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_AR_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_AR_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_AR_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MAKE_COLL_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MAKE_COLL_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MAKE_COLL_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_CASH_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_CASH_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_CASH_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHEQ_PAY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_BILL_PAY_DAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE_COLL_CASE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE_COLL_UNUSAL_REASON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_DISC_RATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_START_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_END_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRED_CONTAIN_GROUP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRED_CHECK_POINT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRED_CHECK_POINT_END)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OVER_CRED_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRED_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_BEGIN_BUSINESS_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_BUSINESS_STOP_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_BUSINESS_DISCOUNT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_TAX_INNER_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_TAX_PERCENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_TRADE_COND_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_PAY_WAY_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_CURR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_INVOICE_OR_ACCORD_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IN_FORMAT_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAY_COLL_BUSINESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUR_GRADE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUR_CRED_CHECK_POINT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUR_CRED_CHECK_POINT_END_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OVER_PUR_CRED_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUR_CRED_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_INVOICE_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_INVOICE_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_INVOICE_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_AP_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_AP_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_AP_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_MAKE_COLL_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_MAKE_COLL_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_MAKE_COLL_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_CASH_BASS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_CASH_DATE_BY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_CASH_DATE_BY_WEEK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMIT_MONEY_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMIT_MONEY_BANK_ACCT_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMIT_MONEY_BANK_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMIT_MONEY_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MONEY_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MONEY_BANK_ACCT_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MONEY_BANK_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUS_MONEY_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BILL_TITLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAY_CHEQ_PAY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROC_COST_BURDEN_TYPE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_BEGIN_BUSINESS_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_BUSINESS_STOP_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FAC_BUSINESS_DISCOUNT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_TEL_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_FAX_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_WEB_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ZIP_ADDR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ADDR_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ADDR_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_ZIP_ADDR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_ADDR_CHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_ADDR_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCOUNT_ZIP_ADDR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCOUNT_ADDR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ACCT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_ACCT_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CASH_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CASH_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DELI_ZIP_ADDR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DELI_ADDR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DELI_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DELI_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPOINT_INVOICE_CORP_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENT_PRICE_TACTIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REPLY_STAMPS_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROD_EXPECT_STORE_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STOP_USE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEL_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIMITS_OF_AUTHORITY_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_BOSS_ALLOW_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_BOSS_ALLOW_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_BOSS_ALLOW_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTRY_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTRY_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFY_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFY_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTRY_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_CHA_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_NUM_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_NUM_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_DATE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USC_FIELD_DATE_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIELD_CHA_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_CHA_16)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_NUM_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCHXX_FIELD_DATE_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_BUSINESS_TEL_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIAISON_BUSINESS_FAX_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LABOR_IDENTITY_YN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LABOR_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZIP_PERM_ADDR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERM_ADDR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BANK_NAME_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SWIFT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NATION_TAIWAN_TAX_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BANK_ADDR_ENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUB_FORMAT_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVO35_TRANS_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUSINESS_CORP_NO_KIND_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUST_GRADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAIL_THE_WAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VIRTUAL_MASK_BANK_ACCT_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISR_MIG_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVO_ZIP_ADDR_CODE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UNIQ_KEY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NAME_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_ABBR_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPANY_PERSON_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACTORY_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMER_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NAME_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_ABBR_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTER_EXT_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_UNIF_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDI_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_TAX_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_SET_UP_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ITEM_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ITEM_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUINESS_CAPITAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CHIEF_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_NUM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AREA_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PARTY_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GROUP_NO_CORP_NO_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GROUP_NO_CORP_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORG_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANSNATIONAL_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHARES_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CORPMODEL_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CORP_PUB_YYYYMM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CORP_TSE_YYYYMM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CORP_OTC_YYYYMM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GROUP_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHER_REMARK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_TAX_INNER_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_TAX_PERCENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_TRADE_COND_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_PAY_WAY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_CURR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_INVOICE_OR_ACCORD_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SA_FORMAT_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVO_XTYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRAN_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE_COLL_BUSINESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVOICE_FOR_BUSINESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVO_NAME_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVO_ADDR_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALE_GRADE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROUTE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BELONG_TO_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JOIN_SELF_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_MUST_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ATTACH_PAPER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALE_CUST_PROD_NO_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHECK_SHEET_SEND_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_INVOICE_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_INVOICE_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_INVOICE_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_AR_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_AR_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_AR_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MAKE_COLL_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MAKE_COLL_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MAKE_COLL_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_CASH_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_CASH_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_CASH_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHEQ_PAY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_BILL_PAY_DAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE_COLL_CASE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE_COLL_UNUSAL_REASON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_DISC_RATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_START_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_END_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRED_CONTAIN_GROUP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRED_CHECK_POINT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRED_CHECK_POINT_END)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OVER_CRED_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRED_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_BEGIN_BUSINESS_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_BUSINESS_STOP_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_BUSINESS_DISCOUNT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_TAX_INNER_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_TAX_PERCENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_TRADE_COND_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_PAY_WAY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_CURR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_INVOICE_OR_ACCORD_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IN_FORMAT_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAY_COLL_BUSINESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUR_GRADE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUR_CRED_CHECK_POINT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUR_CRED_CHECK_POINT_END_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OVER_PUR_CRED_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUR_CRED_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_INVOICE_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_INVOICE_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_INVOICE_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_AP_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_AP_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_AP_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_MAKE_COLL_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_MAKE_COLL_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_MAKE_COLL_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_CASH_BASS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_CASH_DATE_BY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_CASH_DATE_BY_WEEK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMIT_MONEY_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMIT_MONEY_BANK_ACCT_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMIT_MONEY_BANK_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMIT_MONEY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MONEY_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MONEY_BANK_ACCT_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MONEY_BANK_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUS_MONEY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BILL_TITLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAY_CHEQ_PAY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROC_COST_BURDEN_TYPE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_BEGIN_BUSINESS_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_BUSINESS_STOP_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FAC_BUSINESS_DISCOUNT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_TEL_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_FAX_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_WEB_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ZIP_ADDR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ADDR_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ADDR_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_ZIP_ADDR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_ADDR_CHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_ADDR_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCOUNT_ZIP_ADDR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCOUNT_ADDR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ACCT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_ACCT_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CASH_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CASH_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DELI_ZIP_ADDR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DELI_ADDR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DELI_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DELI_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPOINT_INVOICE_CORP_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENT_PRICE_TACTIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REPLY_STAMPS_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROD_EXPECT_STORE_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOP_USE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEL_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIMITS_OF_AUTHORITY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPT_BOSS_ALLOW_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPT_BOSS_ALLOW_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPT_BOSS_ALLOW_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENTRY_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENTRY_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFY_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFY_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENTRY_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_CHA_10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_NUM_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_NUM_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_DATE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USC_FIELD_DATE_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIELD_CHA_10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_CHA_16)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_NUM_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCHXX_FIELD_DATE_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_BUSINESS_TEL_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIAISON_BUSINESS_FAX_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LABOR_IDENTITY_YN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LABOR_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZIP_PERM_ADDR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERM_ADDR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BANK_NAME_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SWIFT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NATION_TAIWAN_TAX_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BANK_ADDR_ENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUB_FORMAT_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVO35_TRANS_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUSINESS_CORP_NO_KIND_10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUST_GRADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAIL_THE_WAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VIRTUAL_MASK_BANK_ACCT_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISR_MIG_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVO_ZIP_ADDR_CODE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
