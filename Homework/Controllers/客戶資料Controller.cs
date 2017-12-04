@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Homework.Models;
-using DynamicLINQ;
 
 namespace Homework.Controllers
 {
@@ -18,12 +17,12 @@ namespace Homework.Controllers
         // GET: 客戶資料
         public ActionResult Index()
         {
-            if(TempData["query_action"]!=null)
+            if(TempData["客戶資料query_action"] !=null)
             { 
-                var data = (List<客戶資料>) TempData["query_result"];
+                var data = (List<客戶資料>) TempData["客戶資料query_result"];
                 if (data == null || data.Count()==0)
                 {
-                    TempData["query_message"] = "查無資料，請修改查詢條件";
+                    TempData["客戶資料query_message"] = "查無資料，請修改查詢條件";
                     return RedirectToAction("Query");
                 }
                 else
@@ -127,8 +126,8 @@ namespace Homework.Controllers
                 if (!string.IsNullOrEmpty(客戶資料.Email)) query = query.Where(x=>x.Email.Contains(客戶資料.Email));
 
                 //return View(result);
-                TempData["query_result"] = query.ToList();
-                TempData["query_action"] = true;
+                TempData["客戶資料query_result"] = query.ToList();
+                TempData["客戶資料query_action"] = true;
                 return RedirectToAction("Index");
             }
             //return View(客戶資料);

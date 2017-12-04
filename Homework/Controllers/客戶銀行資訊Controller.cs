@@ -17,8 +17,39 @@ namespace Homework.Controllers
         // GET: 客戶銀行資訊
         public ActionResult Index()
         {
-            var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
-            return View(客戶銀行資訊.ToList());
+            //db.Configuration.LazyLoadingEnabled = false;
+            var where =(客戶銀行資訊)TempData["客戶銀行資訊query_where"] ;
+            
+            if (TempData["客戶銀行資訊query_action"] != null)
+            {
+                var query = from p in db.客戶銀行資訊
+                            select p;
+
+                if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
+                if (!string.IsNullOrEmpty(where.銀行名稱)) query = query.Where(x => x.銀行名稱.Contains(where.銀行名稱));
+                if (where.銀行代碼 != 0) query = query.Where(x => x.銀行代碼.ToString().Contains(where.銀行代碼.ToString()));
+                if (where.分行代碼 != null) query = query.Where(x => x.分行代碼.ToString().Contains(where.分行代碼.ToString()));
+                if (!string.IsNullOrEmpty(where.帳戶名稱)) query = query.Where(x => x.帳戶名稱.Contains(where.帳戶名稱));
+                if (!string.IsNullOrEmpty(where.帳戶號碼)) query = query.Where(x => x.帳戶號碼.Contains(where.帳戶號碼));
+
+                //var data = (IQueryable<客戶銀行資訊>)TempData["客戶銀行資訊query_result"];
+                var data = query.ToList();
+                if (data == null || data.Count() == 0)
+                {
+                    TempData["客戶銀行資訊query_message"] = "查無資料，請修改查詢條件";
+                    return RedirectToAction("Query");
+                }
+                else
+                {
+                    return View(data.AsQueryable().Include(客 => 客.客戶資料));
+                }
+            }
+            else
+            {
+                TempData["客戶銀行資訊query_action"] = false;
+                var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
+                return View(客戶銀行資訊.ToList());
+            }
         }
 
         // GET: 客戶銀行資訊/Details/5
@@ -107,6 +138,40 @@ namespace Homework.Controllers
                 return HttpNotFound();
             }
             return View(客戶銀行資訊);
+        }
+
+        public ActionResult Query()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Query([Bind(Include = "Id,客戶Id,銀行名稱,銀行代碼,分行代碼,帳戶名稱,帳戶號碼")] 客戶銀行資訊 客戶銀行資訊)
+        {
+            //客戶資料 客戶資料= new 客戶資料();
+            //if (ModelState.IsValid)
+            {
+                var query = from p in db.客戶銀行資訊
+                            select p;
+                            //{
+                            //    p.Id,
+                            //    p.客戶Id,
+                            //    p.銀行名稱,
+                            //    p.銀行代碼,
+                            //    p.分行代碼,
+                            //    p.帳戶名稱,
+                            //    p.帳戶號碼,
+                            //    p.客戶資料
+                            //};
+
+                //return View(result);
+                //TempData["客戶銀行資訊query_result"] = query.ToList().AsQueryable<客戶銀行資訊>();
+                TempData["客戶銀行資訊query_where"] = 客戶銀行資訊;
+                TempData["客戶銀行資訊query_action"] = true;
+                return RedirectToAction("Index");
+            }
+            //return View(客戶資料);
         }
 
         // POST: 客戶銀行資訊/Delete/5
