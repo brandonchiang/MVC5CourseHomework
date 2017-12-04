@@ -6,6 +6,11 @@
 
 <h2>Edit</h2>
 
+@if(TempData["ProductItem"]!=null)
+{
+    var item = TempData["ProductItem"] as MVC5Course.Models.Product;
+    <pre>@item.ProductName 修改成功</pre>
+}
 
 @using (Html.BeginForm())
 {
