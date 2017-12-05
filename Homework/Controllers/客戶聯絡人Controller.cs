@@ -17,8 +17,35 @@ namespace Homework.Controllers
         // GET: 客戶聯絡人
         public ActionResult Index()
         {
-            var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
-            return View(客戶聯絡人.ToList());
+            var where = (客戶聯絡人)TempData["客戶聯絡人query_where"];
+
+            if (TempData["客戶聯絡人query_action"] != null)
+            {
+                var query = from p in db.客戶聯絡人
+                            select p;
+
+                if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
+                if (!string.IsNullOrEmpty(where.職稱)) query = query.Where(x => x.職稱.Contains(where.職稱));
+                if (!string.IsNullOrEmpty(where.姓名)) query = query.Where(x => x.姓名.ToString().Contains(where.姓名.ToString()));
+                if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.ToString().Contains(where.Email.ToString()));
+
+                //var data = (IQueryable<客戶聯絡人>)TempData["客戶聯絡人query_result"];
+                var data = query.ToList();
+                if (data == null || data.Count() == 0)
+                {
+                    TempData["客戶聯絡人query_message"] = "查無資料，請修改查詢條件";
+                    return RedirectToAction("Query");
+                }
+                else
+                {
+                    return View(data.AsQueryable().Include(客 => 客.客戶資料));
+                }
+            }
+            else
+            {
+                var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
+                return View(客戶聯絡人.ToList());
+            }
         }
 
         // GET: 客戶聯絡人/Details/5
@@ -108,7 +135,27 @@ namespace Homework.Controllers
             }
             return View(客戶聯絡人);
         }
+        public ActionResult Query()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Query([Bind(Include = "Id,客戶Id,職稱,姓名,Email,手機,電話")] 客戶聯絡人 客戶聯絡人)
+        {
+            //客戶資料 客戶資料= new 客戶資料();
+            //if (ModelState.IsValid)
+            {
+                var query = from p in db.客戶聯絡人
+                            select p;
+
+                TempData["客戶聯絡人query_where"] = 客戶聯絡人;
+                TempData["客戶聯絡人query_action"] = true;
+                return RedirectToAction("Index");
+            }
+            //return View(客戶資料);
+        }
         // POST: 客戶聯絡人/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
