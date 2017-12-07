@@ -10,9 +10,9 @@ using Homework.Models;
 
 namespace Homework.Controllers
 {
-    public class 客戶聯絡人Controller : Controller
+    public class 客戶聯絡人Controller : BaseController
     {
-        private 客戶Entities db = new 客戶Entities();
+        //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶聯絡人
         public ActionResult Index()
@@ -21,15 +21,15 @@ namespace Homework.Controllers
 
             if (TempData["客戶聯絡人query_action"] != null)
             {
-                var query = from p in db.客戶聯絡人
-                            where p.IsDeleted == false
-                            select p;
+                var query = repo客戶聯絡人.All();
 
-                if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
-                if (!string.IsNullOrEmpty(where.職稱)) query = query.Where(x => x.職稱.Contains(where.職稱));
-                if (!string.IsNullOrEmpty(where.姓名)) query = query.Where(x => x.姓名.ToString().Contains(where.姓名.ToString()));
-                if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.ToString().Contains(where.Email.ToString()));
-
+                if (where != null)
+                {
+                    if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
+                    if (!string.IsNullOrEmpty(where.職稱)) query = query.Where(x => x.職稱.Contains(where.職稱));
+                    if (!string.IsNullOrEmpty(where.姓名)) query = query.Where(x => x.姓名.ToString().Contains(where.姓名.ToString()));
+                    if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.ToString().Contains(where.Email.ToString()));
+                }
                 //var data = (IQueryable<客戶聯絡人>)TempData["客戶聯絡人query_result"];
                 var data = query.ToList();
                 if (data == null || data.Count() == 0)
@@ -44,7 +44,7 @@ namespace Homework.Controllers
             }
             else
             {
-                var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false);
+                var 客戶聯絡人 = repo客戶聯絡人.All();
                 return View(客戶聯絡人.ToList());
             }
         }
@@ -56,7 +56,7 @@ namespace Homework.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
+            客戶聯絡人 客戶聯絡人 = repo客戶聯絡人.Find(id);
             if (客戶聯絡人 == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace Homework.Controllers
         // GET: 客戶聯絡人/Create
         public ActionResult Create()
         {
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱");
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱");
             return View();
         }
 
@@ -80,12 +80,12 @@ namespace Homework.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.客戶聯絡人.Add(客戶聯絡人);
-                db.SaveChanges();
+                repo客戶聯絡人.Add(客戶聯絡人);
+                repo客戶聯絡人.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶聯絡人.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶聯絡人.客戶Id);
             return View(客戶聯絡人);
         }
 
@@ -96,12 +96,12 @@ namespace Homework.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
+            客戶聯絡人 客戶聯絡人 = repo客戶聯絡人.Find(id);
             if (客戶聯絡人 == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶聯絡人.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶聯絡人.客戶Id);
             return View(客戶聯絡人);
         }
 
@@ -114,11 +114,16 @@ namespace Homework.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(客戶聯絡人).State = EntityState.Modified;
-                db.SaveChanges();
+                var item = repo客戶聯絡人.Find(客戶聯絡人.Id);
+                item.客戶Id = 客戶聯絡人.客戶Id;
+                item.職稱 = 客戶聯絡人.職稱;
+                item.姓名 = 客戶聯絡人.姓名;
+                item.Email = 客戶聯絡人.Email;
+                item.手機 = 客戶聯絡人.手機;
+                item.電話 = 客戶聯絡人.電話;
                 return RedirectToAction("Index");
             }
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶聯絡人.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶聯絡人.客戶Id);
             return View(客戶聯絡人);
         }
 
@@ -134,8 +139,7 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = from p in db.客戶聯絡人
-                            select p;
+                var query = repo客戶聯絡人.All();
 
                 TempData["客戶聯絡人query_where"] = 客戶聯絡人;
                 TempData["客戶聯絡人query_action"] = true;
@@ -151,16 +155,16 @@ namespace Homework.Controllers
             //{
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             //}
-            //客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //客戶資料 客戶資料 = repo客戶資料.Find(id);
             //if (客戶資料 == null)
             //{
             //    return HttpNotFound();
             //}
             //return View(客戶資料);
 
-            var item = db.客戶聯絡人.Find(id);
+            var item = repo客戶聯絡人.Find(id);
             item.IsDeleted = true;
-            db.SaveChanges();
+            repo客戶聯絡人.UnitOfWork.Commit();
             TempData["客戶聯絡人Item"] = item;
             TempData["msg"] = "刪除成功";
 
@@ -171,9 +175,9 @@ namespace Homework.Controllers
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(int id)
         //{
-        //    客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
-        //    db.客戶聯絡人.Remove(客戶聯絡人);
-        //    db.SaveChanges();
+        //    客戶聯絡人 客戶聯絡人 = repo客戶聯絡人.Find(id);
+        //    repo客戶聯絡人.Remove(客戶聯絡人);
+        //    repoSaveChanges();
         //    return RedirectToAction("Index");
         //}
 
@@ -181,7 +185,7 @@ namespace Homework.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //repoDispose();
             }
             base.Dispose(disposing);
         }

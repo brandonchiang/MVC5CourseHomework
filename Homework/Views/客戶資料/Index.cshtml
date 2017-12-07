@@ -5,11 +5,16 @@
 }
 
 <h2>Index</h2>
-@if (TempData["客戶資料Item"] != null && TempData["msg"] != null)
+@if (TempData["客戶資料Item"] != null && TempData["客戶資料msg"] != null)
 {
     var item = TempData["客戶資料Item"] as Homework.Models.客戶資料;
-    var msg = TempData["msg"].ToString();
+    var msg = TempData["客戶資料msg"].ToString();
     <pre>@item.客戶名稱 @msg</pre>
+}
+@if (TempData["客戶資料error_msg"] != null)
+{
+    var error_msg = TempData["客戶資料error_msg"].ToString();
+    <pre>@error_msg</pre>
 }
 <p>
     @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-info" })

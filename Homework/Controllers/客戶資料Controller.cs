@@ -10,9 +10,9 @@ using Homework.Models;
 
 namespace Homework.Controllers
 {
-    public class 客戶資料Controller : Controller
+    public class 客戶資料Controller : BaseController
     {
-        private 客戶Entities db = new 客戶Entities();
+        //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶資料
         public ActionResult Index()
@@ -32,17 +32,17 @@ namespace Homework.Controllers
                 }
             }
             else
-                return View(db.客戶資料.Where(d=>d.IsDeleted==false).ToList());
+                return View(repo客戶資料.All());
         }
 
         // GET: 客戶資料/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            客戶資料 客戶資料 = repo客戶資料.Find(id);
             if (客戶資料 == null || 客戶資料.IsDeleted==true)
             {
                 return HttpNotFound();
@@ -65,8 +65,8 @@ namespace Homework.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.客戶資料.Add(客戶資料);
-                db.SaveChanges();
+                repo客戶資料.Add(客戶資料);
+                repo客戶資料.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
 
@@ -74,16 +74,18 @@ namespace Homework.Controllers
         }
 
         // GET: 客戶資料/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            客戶資料 客戶資料 = repo客戶資料.Find(id);
             if (客戶資料 == null || 客戶資料.IsDeleted == true)
             {
-                return HttpNotFound();
+                //return HttpNotFound();
+                TempData["客戶資料error_msg"] = $"id {id} 不存在";
+                //return RedirectToAction("Index");
             }
             return View(客戶資料);
         }
@@ -103,7 +105,7 @@ namespace Homework.Controllers
             //}
             //return View(客戶資料);
 
-            var item = db.客戶資料.Find(客戶資料.Id);
+            var item = repo客戶資料.Find(客戶資料.Id);
             item.客戶名稱 = 客戶資料.客戶名稱;
             item.客戶聯絡人 = 客戶資料.客戶聯絡人;
             item.客戶銀行資訊 = 客戶資料.客戶銀行資訊;
@@ -111,6 +113,7 @@ namespace Homework.Controllers
             item.地址 = 客戶資料.地址;
             item.傳真 = 客戶資料.傳真;
             item.統一編號 = 客戶資料.統一編號;
+            repo客戶資料.UnitOfWork.Commit();
 
             return RedirectToAction("Index");
 
@@ -128,9 +131,7 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = from p in db.客戶資料
-                            where p.IsDeleted == false
-                            select p;
+                var query = repo客戶資料.All();
 
                 if (!string.IsNullOrEmpty(客戶資料.客戶名稱)) query = query.Where(x=>x.客戶名稱.Contains(客戶資料.客戶名稱));
                 if (!string.IsNullOrEmpty(客戶資料.統一編號)) query = query.Where(x=>x.統一編號.Contains(客戶資料.統一編號));
@@ -149,7 +150,7 @@ namespace Homework.Controllers
 
         // GET: 客戶資料/Delete/5
         [HttpGet]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
             //if (id == null)
             //{
@@ -162,9 +163,9 @@ namespace Homework.Controllers
             //}
             //return View(客戶資料);
 
-            var item = db.客戶資料.Find(id);
+            var item = repo客戶資料.Find(id);
             item.IsDeleted = true;
-            db.SaveChanges();
+            repo客戶資料.UnitOfWork.Commit();
             TempData["客戶資料Item"]= item;
             TempData["msg"] = "刪除成功";
 
@@ -186,7 +187,7 @@ namespace Homework.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

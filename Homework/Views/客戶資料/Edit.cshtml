@@ -5,7 +5,12 @@
 }
 
 <h2>Edit</h2>
-
+@if (TempData["客戶資料Item"] != null && TempData["客戶資料msg"] != null)
+{
+    var item = TempData["客戶資料Item"] as Homework.Models.客戶資料;
+    var msg = TempData["客戶資料msg"].ToString();
+    <pre>@item.客戶名稱 @msg</pre>
+}
 
 @using (Html.BeginForm())
 {

@@ -10,9 +10,9 @@ using Homework.Models;
 
 namespace Homework.Controllers
 {
-    public class 客戶銀行資訊Controller : Controller
+    public class 客戶銀行資訊Controller : BaseController
     {
-        private 客戶Entities db = new 客戶Entities();
+        //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶銀行資訊
         public ActionResult Index()
@@ -22,17 +22,17 @@ namespace Homework.Controllers
             
             if (TempData["客戶銀行資訊query_action"] != null)
             {
-                var query = from p in db.客戶銀行資訊
-                            where p.IsDeleted==false
-                            select p;
+                var query = repo客戶銀行資訊.All();
 
-                if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
-                if (!string.IsNullOrEmpty(where.銀行名稱)) query = query.Where(x => x.銀行名稱.Contains(where.銀行名稱));
-                if (where.銀行代碼 != 0) query = query.Where(x => x.銀行代碼.ToString().Contains(where.銀行代碼.ToString()));
-                if (where.分行代碼 != null) query = query.Where(x => x.分行代碼.ToString().Contains(where.分行代碼.ToString()));
-                if (!string.IsNullOrEmpty(where.帳戶名稱)) query = query.Where(x => x.帳戶名稱.Contains(where.帳戶名稱));
-                if (!string.IsNullOrEmpty(where.帳戶號碼)) query = query.Where(x => x.帳戶號碼.Contains(where.帳戶號碼));
-
+                if (where != null)
+                {
+                    if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
+                    if (!string.IsNullOrEmpty(where.銀行名稱)) query = query.Where(x => x.銀行名稱.Contains(where.銀行名稱));
+                    if (where.銀行代碼 != 0) query = query.Where(x => x.銀行代碼.ToString().Contains(where.銀行代碼.ToString()));
+                    if (where.分行代碼 != null) query = query.Where(x => x.分行代碼.ToString().Contains(where.分行代碼.ToString()));
+                    if (!string.IsNullOrEmpty(where.帳戶名稱)) query = query.Where(x => x.帳戶名稱.Contains(where.帳戶名稱));
+                    if (!string.IsNullOrEmpty(where.帳戶號碼)) query = query.Where(x => x.帳戶號碼.Contains(where.帳戶號碼));
+                }
                 //var data = (IQueryable<客戶銀行資訊>)TempData["客戶銀行資訊query_result"];
                 var data = query.ToList();
                 if (data == null || data.Count() == 0)
@@ -42,25 +42,25 @@ namespace Homework.Controllers
                 }
                 else
                 {
-                    return View(data.AsQueryable().Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false));
+                    return View(data.AsQueryable().Include(客 => 客.客戶資料));
                 }
             }
             else
             {
                 TempData["客戶銀行資訊query_action"] = false;
-                var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false);
+                var 客戶銀行資訊 = repo客戶銀行資訊.All();
                 return View(客戶銀行資訊.ToList());
             }
         }
 
         // GET: 客戶銀行資訊/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            客戶銀行資訊 客戶銀行資訊 = repo客戶銀行資訊.Find(id);
             if (客戶銀行資訊 == null)
             {
                 return HttpNotFound();
@@ -71,7 +71,7 @@ namespace Homework.Controllers
         // GET: 客戶銀行資訊/Create
         public ActionResult Create()
         {
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱");
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱");
             return View();
         }
 
@@ -84,28 +84,28 @@ namespace Homework.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.客戶銀行資訊.Add(客戶銀行資訊);
-                db.SaveChanges();
+                repo客戶銀行資訊.Add(客戶銀行資訊);
+                repo客戶銀行資訊.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
             return View(客戶銀行資訊);
         }
 
         // GET: 客戶銀行資訊/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            客戶銀行資訊 客戶銀行資訊 = repo客戶銀行資訊.Find(id);
             if (客戶銀行資訊 == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
             return View(客戶銀行資訊);
         }
 
@@ -118,11 +118,16 @@ namespace Homework.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(客戶銀行資訊).State = EntityState.Modified;
-                db.SaveChanges();
+                var item = repo客戶銀行資訊.Find(客戶銀行資訊.Id);
+                item.客戶Id = 客戶銀行資訊.客戶Id;
+                item.銀行名稱 = 客戶銀行資訊.銀行名稱;
+                item.銀行代碼 = 客戶銀行資訊.銀行代碼;
+                item.分行代碼 = 客戶銀行資訊.分行代碼;
+                item.帳戶名稱 = 客戶銀行資訊.帳戶名稱;
+                item.帳戶號碼 = 客戶銀行資訊.帳戶號碼;
                 return RedirectToAction("Index");
             }
-            ViewBag.客戶Id = new SelectList(db.客戶資料, "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
+            ViewBag.客戶Id = new SelectList(repo客戶資料.All(), "Id", "客戶名稱", 客戶銀行資訊.客戶Id);
             return View(客戶銀行資訊);
         }
 
@@ -138,8 +143,7 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = from p in db.客戶銀行資訊
-                            select p;
+                var query = repo客戶銀行資訊.All();
 
                 TempData["客戶銀行資訊query_where"] = 客戶銀行資訊;
                 TempData["客戶銀行資訊query_action"] = true;
@@ -150,11 +154,11 @@ namespace Homework.Controllers
 
         // GET: 客戶銀行資訊/Delete/5
         [HttpGet]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            var item = db.客戶銀行資訊.Find(id);
+            var item = repo客戶銀行資訊.Find(id);
             item.IsDeleted = true;
-            db.SaveChanges();
+            repo客戶銀行資訊.UnitOfWork.Commit();
             TempData["客戶銀行資訊Item"] = item;
             TempData["msg"] = "刪除成功";
 
@@ -165,7 +169,7 @@ namespace Homework.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
