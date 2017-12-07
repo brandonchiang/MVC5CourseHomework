@@ -32,7 +32,7 @@ namespace Homework.Controllers
                 }
             }
             else
-                return View(db.客戶資料.ToList());
+                return View(db.客戶資料.Where(d=>d.IsDeleted==false).ToList());
         }
 
         // GET: 客戶資料/Details/5
@@ -43,7 +43,7 @@ namespace Homework.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            if (客戶資料 == null)
+            if (客戶資料 == null || 客戶資料.IsDeleted==true)
             {
                 return HttpNotFound();
             }
@@ -81,7 +81,7 @@ namespace Homework.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            if (客戶資料 == null)
+            if (客戶資料 == null || 客戶資料.IsDeleted == true)
             {
                 return HttpNotFound();
             }
@@ -95,13 +95,25 @@ namespace Homework.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(客戶資料).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(客戶資料);
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(客戶資料).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            //return View(客戶資料);
+
+            var item = db.客戶資料.Find(客戶資料.Id);
+            item.客戶名稱 = 客戶資料.客戶名稱;
+            item.客戶聯絡人 = 客戶資料.客戶聯絡人;
+            item.客戶銀行資訊 = 客戶資料.客戶銀行資訊;
+            item.電話 = 客戶資料.電話;
+            item.地址 = 客戶資料.地址;
+            item.傳真 = 客戶資料.傳真;
+            item.統一編號 = 客戶資料.統一編號;
+
+            return RedirectToAction("Index");
+
         }
 
         public ActionResult Query()
@@ -116,7 +128,9 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = from p in db.客戶資料 select p;
+                var query = from p in db.客戶資料
+                            where p.IsDeleted == false
+                            select p;
 
                 if (!string.IsNullOrEmpty(客戶資料.客戶名稱)) query = query.Where(x=>x.客戶名稱.Contains(客戶資料.客戶名稱));
                 if (!string.IsNullOrEmpty(客戶資料.統一編號)) query = query.Where(x=>x.統一編號.Contains(客戶資料.統一編號));
@@ -134,38 +148,47 @@ namespace Homework.Controllers
         }
 
         // GET: 客戶資料/Delete/5
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶資料 客戶資料 = db.客戶資料.Find(id);
-            if (客戶資料 == null)
-            {
-                return HttpNotFound();
-            }
-            return View(客戶資料);
-        }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //if (客戶資料 == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(客戶資料);
 
-        // POST: 客戶資料/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            客戶資料 客戶資料 = db.客戶資料.Find(id);
-            db.客戶資料.Remove(客戶資料);
+            var item = db.客戶資料.Find(id);
+            item.IsDeleted = true;
             db.SaveChanges();
+            TempData["客戶資料Item"]= item;
+            TempData["msg"] = "刪除成功";
+
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
+        // POST: 客戶資料/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
         //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
+        //    客戶資料 客戶資料 = db.客戶資料.Find(id);
+        //    db.客戶資料.Remove(客戶資料);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
         //}
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

@@ -5,7 +5,12 @@
 }
 
 <h2>Index</h2>
-
+@if (TempData["客戶資料Item"] != null && TempData["msg"] != null)
+{
+    var item = TempData["客戶資料Item"] as Homework.Models.客戶資料;
+    var msg = TempData["msg"].ToString();
+    <pre>@item.客戶名稱 @msg</pre>
+}
 <p>
     @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-info" })
     @Html.ActionLink("查詢", "Query",null,new {@class="btn btn-success" })
@@ -57,7 +62,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-default" }) 
             @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-default" }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('確定要刪除資料?');" ,@class = "btn btn-default" })
         </td>
     </tr>
 }

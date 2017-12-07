@@ -22,6 +22,7 @@ namespace Homework.Controllers
             if (TempData["客戶聯絡人query_action"] != null)
             {
                 var query = from p in db.客戶聯絡人
+                            where p.IsDeleted == false
                             select p;
 
                 if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
@@ -38,12 +39,12 @@ namespace Homework.Controllers
                 }
                 else
                 {
-                    return View(data.AsQueryable().Include(客 => 客.客戶資料));
+                    return View(data.AsQueryable().Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false));
                 }
             }
             else
             {
-                var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
+                var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false);
                 return View(客戶聯絡人.ToList());
             }
         }
@@ -121,20 +122,6 @@ namespace Homework.Controllers
             return View(客戶聯絡人);
         }
 
-        // GET: 客戶聯絡人/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
-            if (客戶聯絡人 == null)
-            {
-                return HttpNotFound();
-            }
-            return View(客戶聯絡人);
-        }
         public ActionResult Query()
         {
             return View();
@@ -157,15 +144,38 @@ namespace Homework.Controllers
             //return View(客戶資料);
         }
         // POST: 客戶聯絡人/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpGet]
+        public ActionResult Delete(int? id)
         {
-            客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
-            db.客戶聯絡人.Remove(客戶聯絡人);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //if (客戶資料 == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(客戶資料);
+
+            var item = db.客戶聯絡人.Find(id);
+            item.IsDeleted = true;
             db.SaveChanges();
+            TempData["客戶聯絡人Item"] = item;
+            TempData["msg"] = "刪除成功";
+
             return RedirectToAction("Index");
         }
+
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
+        //    db.客戶聯絡人.Remove(客戶聯絡人);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

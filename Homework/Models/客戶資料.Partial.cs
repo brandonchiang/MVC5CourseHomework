@@ -35,7 +35,9 @@ namespace Homework.Models
         [StringLength(250, ErrorMessage="欄位長度不得大於 250 個字元")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",ErrorMessage ="不是有效的電子郵件格式")]
         public string Email { get; set; }
-    
+        public bool IsDeleted { get; set; }
+
+
         public virtual ICollection<客戶銀行資訊> 客戶銀行資訊 { get; set; }
         public virtual ICollection<客戶聯絡人> 客戶聯絡人 { get; set; }
     }

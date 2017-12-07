@@ -23,6 +23,7 @@ namespace Homework.Controllers
             if (TempData["客戶銀行資訊query_action"] != null)
             {
                 var query = from p in db.客戶銀行資訊
+                            where p.IsDeleted==false
                             select p;
 
                 if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
@@ -41,13 +42,13 @@ namespace Homework.Controllers
                 }
                 else
                 {
-                    return View(data.AsQueryable().Include(客 => 客.客戶資料));
+                    return View(data.AsQueryable().Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false));
                 }
             }
             else
             {
                 TempData["客戶銀行資訊query_action"] = false;
-                var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
+                var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false);
                 return View(客戶銀行資訊.ToList());
             }
         }
@@ -125,21 +126,6 @@ namespace Homework.Controllers
             return View(客戶銀行資訊);
         }
 
-        // GET: 客戶銀行資訊/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
-            if (客戶銀行資訊 == null)
-            {
-                return HttpNotFound();
-            }
-            return View(客戶銀行資訊);
-        }
-
         public ActionResult Query()
         {
             return View();
@@ -154,19 +140,7 @@ namespace Homework.Controllers
             {
                 var query = from p in db.客戶銀行資訊
                             select p;
-                            //{
-                            //    p.Id,
-                            //    p.客戶Id,
-                            //    p.銀行名稱,
-                            //    p.銀行代碼,
-                            //    p.分行代碼,
-                            //    p.帳戶名稱,
-                            //    p.帳戶號碼,
-                            //    p.客戶資料
-                            //};
 
-                //return View(result);
-                //TempData["客戶銀行資訊query_result"] = query.ToList().AsQueryable<客戶銀行資訊>();
                 TempData["客戶銀行資訊query_where"] = 客戶銀行資訊;
                 TempData["客戶銀行資訊query_action"] = true;
                 return RedirectToAction("Index");
@@ -174,14 +148,16 @@ namespace Homework.Controllers
             //return View(客戶資料);
         }
 
-        // POST: 客戶銀行資訊/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        // GET: 客戶銀行資訊/Delete/5
+        [HttpGet]
+        public ActionResult Delete(int? id)
         {
-            客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
-            db.客戶銀行資訊.Remove(客戶銀行資訊);
+            var item = db.客戶銀行資訊.Find(id);
+            item.IsDeleted = true;
             db.SaveChanges();
+            TempData["客戶銀行資訊Item"] = item;
+            TempData["msg"] = "刪除成功";
+
             return RedirectToAction("Index");
         }
 

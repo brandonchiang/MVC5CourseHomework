@@ -14,7 +14,6 @@ namespace Homework.Models
     
     public partial class 客戶帳戶聯絡人數量
     {
-        
         public int Id { get; set; }
         public string 客戶名稱 { get; set; }
         public Nullable<int> 銀行帳戶數量 { get; set; }
