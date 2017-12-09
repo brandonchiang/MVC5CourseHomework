@@ -13,7 +13,12 @@ namespace Homework.Models
 
         public 客戶資料 Find(int id)
         {
-            return this.All().FirstOrDefault(p => p.Id == id);
+            return this.All().Where(p => p.IsDeleted == false).FirstOrDefault(p => p.Id == id);
+        }
+
+        public IQueryable<客戶資料> filterByCatalog(string catalog)
+        {
+            return base.All().Where(p => p.IsDeleted == false && p.客戶分類.Equals(catalog));
         }
     }
 

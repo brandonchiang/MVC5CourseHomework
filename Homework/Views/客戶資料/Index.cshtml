@@ -18,10 +18,20 @@
 }
 <p>
     @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-info" })
-    @Html.ActionLink("查詢", "Query",null,new {@class="btn btn-success" })
+    @Html.ActionLink("查詢", "Query", null, new { @class = "btn btn-success" })    
 </p>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="control-label col-md-2">客戶分類</div>
+        <div class="col-md-10">
+            @Html.DropDownList("客戶分類", null, "請選擇", new { @onchange = "catalog_change(this.value)" })
+            <button  type="submit" value="篩選" class="btn btn-default">篩選</button>
+        </div>
+    </div>
+}
 
-<table class="table">
+<table class="table" id="客戶資料Table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.客戶名稱)
@@ -73,3 +83,38 @@
 }
 
 </table>
+
+    <div id="cust_grid"></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="@Url.Content("~/Scripts/jquery-3.1.1.js")" type="text/javascript">
+</script>
+<script type="text/javascript">
+    function catalog_change(value) {
+        $("#catalog").html(value);
+    };
+
+    $(document).ready(function () {
+        //$("#客戶資料change").on("change", function () {
+        //    $("#catalog").val();
+        //});
+        $("#Reload").click(function () {
+            //debugger;
+            var params = new Object();
+            params.catalog = $("#catalog").html();
+            $.ajax({
+                type: "POST", //HTTP POST Method
+                contentType: "application/json; charset=utf-8",
+                url: "/客戶資料/Index",
+                data: JSON.stringify(params),
+                dataType: "json",
+                success: function (data) {
+                    $("#cust_grid").load("/客戶資料/reload")
+                }
+            })
+        })
+    });
+    
+</script>

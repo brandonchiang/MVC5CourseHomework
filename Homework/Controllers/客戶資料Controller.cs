@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Homework.Models;
+using System.Web.Script.Serialization;
 
 namespace Homework.Controllers
 {
@@ -15,12 +16,14 @@ namespace Homework.Controllers
         //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶資料
-        public ActionResult Index()
+        public ActionResult Index(string 客戶分類)
         {
-            if(TempData["客戶資料query_action"] !=null)
-            { 
-                var data = (List<客戶資料>) TempData["客戶資料query_result"];
-                if (data == null || data.Count()==0)
+            ViewBag.客戶分類 = new SelectList(repo客戶資料.All(), "客戶分類", "客戶分類", null);
+
+            if (TempData["客戶資料query_action"] != null)
+            {
+                var data = (List<客戶資料>)TempData["客戶資料query_result"];
+                if (data == null || data.Count() == 0)
                 {
                     TempData["客戶資料query_message"] = "查無資料，請修改查詢條件";
                     return RedirectToAction("Query");
@@ -32,7 +35,31 @@ namespace Homework.Controllers
                 }
             }
             else
-                return View(repo客戶資料.All());
+            {
+                if (!string.IsNullOrEmpty(客戶分類))
+                    return View(repo客戶資料.filterByCatalog(客戶分類));
+                else
+                    return View(repo客戶資料.All());
+            }
+        }
+
+        //public JsonResult Reload(string catalog)
+        //{
+        //    var data = repo客戶資料.All().Where(p => p.客戶分類.Equals(catalog));
+        //    var data_list = data.ToList();
+        //    return Json(data_list, JsonRequestBehavior.AllowGet);
+        //}
+
+        public ActionResult Reload(string catalog)
+        {
+            var query = repo客戶資料.All();
+
+            if (catalog!="") query = query.Where(x => x.客戶分類.Contains(catalog));
+
+            //return View(result);
+            TempData["客戶資料query_result"] = query.ToList();
+            TempData["客戶資料query_action"] = true;
+            return RedirectToAction("Index");
         }
 
         // GET: 客戶資料/Details/5
@@ -43,7 +70,7 @@ namespace Homework.Controllers
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             //}
             客戶資料 客戶資料 = repo客戶資料.Find(id);
-            if (客戶資料 == null || 客戶資料.IsDeleted==true)
+            if (客戶資料 == null) 
             {
                 return HttpNotFound();
             }
@@ -61,7 +88,7 @@ namespace Homework.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料)
+        public ActionResult Create([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email,客戶分類")] 客戶資料 客戶資料)
         {
             if (ModelState.IsValid)
             {
@@ -69,6 +96,7 @@ namespace Homework.Controllers
                 repo客戶資料.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
+
 
             return View(客戶資料);
         }
@@ -95,7 +123,7 @@ namespace Homework.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料)
+        public ActionResult Edit([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email,客戶分類")] 客戶資料 客戶資料)
         {
             //if (ModelState.IsValid)
             //{
@@ -113,6 +141,9 @@ namespace Homework.Controllers
             item.地址 = 客戶資料.地址;
             item.傳真 = 客戶資料.傳真;
             item.統一編號 = 客戶資料.統一編號;
+            item.Email = 客戶資料.Email;
+            item.客戶分類 = 客戶資料.客戶分類;
+
             repo客戶資料.UnitOfWork.Commit();
 
             return RedirectToAction("Index");
@@ -126,7 +157,7 @@ namespace Homework.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Query([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料)
+        public ActionResult Query([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email,客戶分類")] 客戶資料 客戶資料)
         {
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
@@ -139,6 +170,7 @@ namespace Homework.Controllers
                 if (!string.IsNullOrEmpty(客戶資料.傳真)) query = query.Where(x=>x.傳真.Contains(客戶資料.傳真));
                 if (!string.IsNullOrEmpty(客戶資料.地址)) query = query.Where(x=>x.地址.Contains(客戶資料.地址));
                 if (!string.IsNullOrEmpty(客戶資料.Email)) query = query.Where(x=>x.Email.Contains(客戶資料.Email));
+                if (!string.IsNullOrEmpty(客戶資料.客戶分類)) query = query.Where(x=>x.客戶分類.Contains(客戶資料.客戶分類));
 
                 //return View(result);
                 TempData["客戶資料query_result"] = query.ToList();
