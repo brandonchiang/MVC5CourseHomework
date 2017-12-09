@@ -15,7 +15,7 @@ namespace Homework.Controllers
         //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶聯絡人
-        public ActionResult Index()
+        public ActionResult Index(string 職稱)
         {
             var where = (客戶聯絡人)TempData["客戶聯絡人query_where"];
 
@@ -44,8 +44,12 @@ namespace Homework.Controllers
             }
             else
             {
-                var 客戶聯絡人 = repo客戶聯絡人.All();
-                return View(客戶聯絡人.ToList());
+                //var 客戶聯絡人 = repo客戶聯絡人.All();
+                //return View(客戶聯絡人.ToList());
+                if (!string.IsNullOrEmpty(職稱))
+                    return View(repo客戶聯絡人.filterBy職稱(職稱));
+                else
+                    return View(repo客戶聯絡人.All());
             }
         }
 

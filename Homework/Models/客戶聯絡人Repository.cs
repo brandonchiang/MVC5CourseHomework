@@ -15,6 +15,11 @@ namespace Homework.Models
         {
             return this.All().FirstOrDefault(p => p.IsDeleted == false);
         }
+
+        public IQueryable<客戶聯絡人> filterBy職稱(string 職稱)
+        {
+            return base.All().Where(p => p.IsDeleted == false && p.職稱.Contains(職稱));
+        }
     }
 
     public  interface I客戶聯絡人Repository : IRepository<客戶聯絡人>
