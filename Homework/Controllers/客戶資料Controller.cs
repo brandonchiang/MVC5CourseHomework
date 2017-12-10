@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Homework.Models;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace Homework.Controllers
 {
@@ -75,6 +76,28 @@ namespace Homework.Controllers
                 return HttpNotFound();
             }
             return View(客戶資料);
+        }
+
+        public JsonResult CustInfo(int id)
+        {
+            客戶資料 cust = repo客戶資料.Find(id);
+            if (cust == null) return null;
+
+            var result = new 客戶資料
+            {
+                Id = cust.Id,
+                客戶分類 = cust.客戶分類,
+                客戶名稱 = cust.客戶名稱,
+                統一編號 = cust.統一編號,
+                電話 = cust.電話,
+                傳真 = cust.傳真,
+                地址 = cust.地址,
+                Email = cust.Email
+            };
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+            //具有潛在危險 Request.Path 的值已從用戶端 (?) 偵測到。
+            //return Json(JsonConvert.SerializeObject(cust), JsonRequestBehavior.AllowGet);
         }
 
         // GET: 客戶資料/Create

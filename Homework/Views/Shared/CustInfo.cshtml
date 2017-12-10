@@ -1,0 +1,45 @@
+﻿<blockquote>
+    <p>
+        <div id="cust_info"></div>
+    </p>
+</blockquote>
+
+<script src="@Url.Content("~/Scripts/jquery-3.1.1.js")" type="text/javascript">
+</script>
+<script type="text/javascript">
+
+    function custinfo(id) {
+        //debugger;
+        var params = new Object();
+        params.id = id;
+        $.ajax({
+            type: "POST", //HTTP POST Method
+            contentType: "application/json; charset=utf-8",
+            url: "/客戶資料/CustInfo",
+            data: JSON.stringify(params),
+            dataType: "json",
+            success: function (result) {
+                setValue(result);
+            },
+            error: function (xhr) {
+                console.log(xhr.responseText);
+                alert("Error has occurred..");
+            }
+        })
+    };
+
+    function setValue(data) {
+        var custinfo = "";
+        custinfo += "Id:"+ data.Id + "<br />";
+        custinfo += "客戶名稱:"+ data.客戶名稱 + "<br />";
+        custinfo += "統一編號:" + data.統一編號 + "<br />";
+        custinfo += "電話:" +data.電話 + "<br />";
+        custinfo += "傳真:" +data.傳真 + "<br />";
+        custinfo += "地址:" +data.地址 + "<br />";
+        custinfo += "Email:" +data.Email + "<br />";
+        custinfo += "客戶分類:" +data.客戶分類 + "<br />";
+
+        $('#cust_info').html(custinfo);
+    };
+
+</script>

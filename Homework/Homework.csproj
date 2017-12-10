@@ -326,6 +326,7 @@
     <Content Include="Views\客戶帳戶聯絡人數量\Details.cshtml" />
     <Content Include="Views\客戶帳戶聯絡人數量\Edit.cshtml" />
     <Content Include="Views\客戶帳戶聯絡人數量\Index.cshtml" />
+    <Content Include="Views\Shared\CustInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

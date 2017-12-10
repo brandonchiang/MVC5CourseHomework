@@ -57,7 +57,7 @@
             @Html.DisplayFor(modelItem => item.帳戶號碼)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.客戶資料.客戶名稱)
+            <button type="submit" onclick="custinfo(@item.客戶Id);" class="btn btn-default">@item.客戶資料.客戶名稱</button>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-default" }) 
@@ -68,3 +68,5 @@
 }
 
 </table>
+
+@Html.Partial("CustInfo")
