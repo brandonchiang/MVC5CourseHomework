@@ -15,9 +15,16 @@ namespace Homework.Controllers
         //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶聯絡人
-        public ActionResult Index(string 職稱)
+        public ActionResult Index(string 職稱,string sortOrder)
         {
             var where = (客戶聯絡人)TempData["客戶聯絡人query_where"];
+
+            ViewBag.職稱SortParam = sortOrder== "職稱" ? "職稱desc" : "職稱";
+            ViewBag.姓名SortParam = sortOrder== "姓名" ? "姓名desc" : "姓名";
+            ViewBag.EmailSortParam = sortOrder == "Email" ? "Emaildesc" : "Email";
+            ViewBag.手機SortParam = sortOrder == "手機" ? "手機desc" : "手機";
+            ViewBag.電話SortParam = sortOrder == "電話" ? "電話desc" : "電話";
+            ViewBag.客戶名稱SortParam = sortOrder == "客戶名稱" ? "客戶名稱desc" : "客戶名稱";
 
             if (TempData["客戶聯絡人query_action"] != null)
             {
@@ -31,6 +38,45 @@ namespace Homework.Controllers
                     if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.ToString().Contains(where.Email.ToString()));
                 }
                 //var data = (IQueryable<客戶聯絡人>)TempData["客戶聯絡人query_result"];
+                switch (sortOrder)
+                {
+                    case "職稱":
+                        query = query.OrderBy(s => s.職稱);
+                        break;
+                    case "職稱desc":
+                        query = query.OrderByDescending(s => s.職稱);
+                        break;
+                    case "姓名":
+                        query = query.OrderBy(s => s.姓名);
+                        break;
+                    case "姓名desc":
+                        query = query.OrderByDescending(s => s.姓名);
+                        break;
+                    case "Email":
+                        query = query.OrderBy(s => s.Email);
+                        break;
+                    case "Emaildesc":
+                        query = query.OrderByDescending(s => s.Email);
+                        break;
+                    case "手機":
+                        query = query.OrderBy(s => s.手機);
+                        break;
+                    case "手機desc":
+                        query = query.OrderByDescending(s => s.手機);
+                        break;
+                    case "電話":
+                        query = query.OrderBy(s => s.電話);
+                        break;
+                    case "電話desc":
+                        query = query.OrderByDescending(s => s.電話);
+                        break;
+                    case "客戶名稱":
+                        query = query.OrderBy(s => s.客戶資料.客戶名稱);
+                        break;
+                    case "客戶名稱desc":
+                        query = query.OrderByDescending(s => s.客戶資料.客戶名稱);
+                        break;
+                }
                 var data = query.ToList();
                 if (data == null || data.Count() == 0)
                 {
@@ -39,6 +85,7 @@ namespace Homework.Controllers
                 }
                 else
                 {
+
                     return View(data.AsQueryable().Include(客 => 客.客戶資料).Where(d => d.IsDeleted == false));
                 }
             }
@@ -46,10 +93,53 @@ namespace Homework.Controllers
             {
                 //var 客戶聯絡人 = repo客戶聯絡人.All();
                 //return View(客戶聯絡人.ToList());
+                var query = repo客戶聯絡人.Empty();
                 if (!string.IsNullOrEmpty(職稱))
-                    return View(repo客戶聯絡人.filterBy職稱(職稱));
+                    query = repo客戶聯絡人.filterBy職稱(職稱);
                 else
-                    return View(repo客戶聯絡人.All());
+                    query = repo客戶聯絡人.All();
+
+                switch (sortOrder)
+                {
+                    case "職稱":
+                        query = query.OrderBy(s => s.職稱);
+                        break;
+                    case "職稱desc":
+                        query = query.OrderByDescending(s => s.職稱);
+                        break;
+                    case "姓名":
+                        query = query.OrderBy(s => s.姓名);
+                        break;
+                    case "姓名desc":
+                        query = query.OrderByDescending(s => s.姓名);
+                        break;
+                    case "Email":
+                        query = query.OrderBy(s => s.Email);
+                        break;
+                    case "Emaildesc":
+                        query = query.OrderByDescending(s => s.Email);
+                        break;
+                    case "手機":
+                        query = query.OrderBy(s => s.手機);
+                        break;
+                    case "手機desc":
+                        query = query.OrderByDescending(s => s.手機);
+                        break;
+                    case "電話":
+                        query = query.OrderBy(s => s.電話);
+                        break;
+                    case "電話desc":
+                        query = query.OrderByDescending(s => s.電話);
+                        break;
+                    case "客戶名稱":
+                        query = query.OrderBy(s => s.客戶資料.客戶名稱);
+                        break;
+                    case "客戶名稱desc":
+                        query = query.OrderByDescending(s => s.客戶資料.客戶名稱);
+                        break;
+                }
+
+                return View(query);
             }
         }
 

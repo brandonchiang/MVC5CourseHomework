@@ -11,6 +11,11 @@ namespace Homework.Models
             return base.All().Where(p=>p.IsDeleted==false);
         }
 
+        public IQueryable<客戶聯絡人> Empty()
+        {
+            return this.All().Where(p => p.Id == -1); //一定不會有資料，只是為了想要宣告一個空的
+        }
+
         internal 客戶聯絡人 Find(int? id)
         {
             return this.All().FirstOrDefault(p => p.IsDeleted == false);

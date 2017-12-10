@@ -15,11 +15,18 @@ namespace Homework.Controllers
         //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶銀行資訊
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             //db.Configuration.LazyLoadingEnabled = false;
             var where =(客戶銀行資訊)TempData["客戶銀行資訊query_where"] ;
-            
+
+            ViewBag.銀行名稱SortParam = sortOrder == "銀行名稱" ? "銀行名稱desc" : "銀行名稱";
+            ViewBag.銀行代碼SortParam = sortOrder == "銀行代碼" ? "銀行代碼desc" : "銀行代碼";
+            ViewBag.分行代碼SortParam = sortOrder == "分行代碼" ? "分行代碼desc" : "分行代碼";
+            ViewBag.帳戶名稱SortParam = sortOrder == "帳戶名稱" ? "帳戶名稱desc" : "帳戶名稱";
+            ViewBag.帳戶號碼SortParam = sortOrder == "帳戶號碼" ? "帳戶號碼desc" : "帳戶號碼";
+            ViewBag.客戶名稱SortParam = sortOrder == "客戶名稱" ? "客戶名稱desc" : "客戶名稱";
+
             if (TempData["客戶銀行資訊query_action"] != null)
             {
                 var query = repo客戶銀行資訊.All();
@@ -34,7 +41,46 @@ namespace Homework.Controllers
                     if (!string.IsNullOrEmpty(where.帳戶號碼)) query = query.Where(x => x.帳戶號碼.Contains(where.帳戶號碼));
                 }
                 //var data = (IQueryable<客戶銀行資訊>)TempData["客戶銀行資訊query_result"];
-                var data = query.ToList();
+                switch (sortOrder)
+                {
+                    case "銀行名稱":
+                        query = query.OrderBy(s => s.銀行名稱);
+                        break;
+                    case "銀行名稱desc":
+                        query = query.OrderByDescending(s => s.銀行名稱);
+                        break;
+                    case "銀行代碼":
+                        query = query.OrderBy(s => s.銀行代碼);
+                        break;
+                    case "銀行代碼desc":
+                        query = query.OrderByDescending(s => s.銀行代碼);
+                        break;
+                    case "分行代碼":
+                        query = query.OrderBy(s => s.分行代碼);
+                        break;
+                    case "分行代碼desc":
+                        query = query.OrderByDescending(s => s.分行代碼);
+                        break;
+                    case "帳戶名稱":
+                        query = query.OrderBy(s => s.帳戶名稱);
+                        break;
+                    case "帳戶名稱desc":
+                        query = query.OrderByDescending(s => s.帳戶名稱);
+                        break;
+                    case "帳戶號碼":
+                        query = query.OrderBy(s => s.帳戶號碼);
+                        break;
+                    case "帳戶號碼desc":
+                        query = query.OrderByDescending(s => s.帳戶號碼);
+                        break;
+                    case "客戶名稱":
+                        query = query.OrderBy(s => s.客戶資料.客戶名稱);
+                        break;
+                    case "客戶名稱desc":
+                        query = query.OrderByDescending(s => s.客戶資料.客戶名稱);
+                        break;
+                }
+                        var data = query.ToList();
                 if (data == null || data.Count() == 0)
                 {
                     TempData["客戶銀行資訊query_message"] = "查無資料，請修改查詢條件";
@@ -47,9 +93,50 @@ namespace Homework.Controllers
             }
             else
             {
+                var query = repo客戶銀行資訊.All();
+
+                switch (sortOrder)
+                {
+                    case "銀行名稱":
+                        query = query.OrderBy(s => s.銀行名稱);
+                        break;
+                    case "銀行名稱desc":
+                        query = query.OrderByDescending(s => s.銀行名稱);
+                        break;
+                    case "銀行代碼":
+                        query = query.OrderBy(s => s.銀行代碼);
+                        break;
+                    case "銀行代碼desc":
+                        query = query.OrderByDescending(s => s.銀行代碼);
+                        break;
+                    case "分行代碼":
+                        query = query.OrderBy(s => s.分行代碼);
+                        break;
+                    case "分行代碼desc":
+                        query = query.OrderByDescending(s => s.分行代碼);
+                        break;
+                    case "帳戶名稱":
+                        query = query.OrderBy(s => s.帳戶名稱);
+                        break;
+                    case "帳戶名稱desc":
+                        query = query.OrderByDescending(s => s.帳戶名稱);
+                        break;
+                    case "帳戶號碼":
+                        query = query.OrderBy(s => s.帳戶號碼);
+                        break;
+                    case "帳戶號碼desc":
+                        query = query.OrderByDescending(s => s.帳戶號碼);
+                        break;
+                    case "客戶名稱":
+                        query = query.OrderBy(s => s.客戶資料.客戶名稱);
+                        break;
+                    case "客戶名稱desc":
+                        query = query.OrderByDescending(s => s.客戶資料.客戶名稱);
+                        break;
+                }
+
                 TempData["客戶銀行資訊query_action"] = false;
-                var 客戶銀行資訊 = repo客戶銀行資訊.All();
-                return View(客戶銀行資訊.ToList());
+                return View(query);
             }
         }
 
