@@ -18,12 +18,21 @@ namespace Homework.Models
 
         internal 客戶聯絡人 Find(int? id)
         {
-            return this.All().FirstOrDefault(p => p.IsDeleted == false);
+            return this.All().FirstOrDefault(p => p.IsDeleted == false && p.Id==id);
         }
 
         public IQueryable<客戶聯絡人> filterBy職稱(string 職稱)
         {
             return base.All().Where(p => p.IsDeleted == false && p.職稱.Contains(職稱));
+        }
+
+        public bool CheckEmail(int id,string Email)
+        {
+            var data = this.Where(d => d.Id != id && d.Email == Email);
+            if (data.Count() > 0)
+                return false;
+
+            return true;
         }
     }
 
