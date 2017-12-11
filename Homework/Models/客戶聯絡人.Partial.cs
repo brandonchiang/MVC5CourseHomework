@@ -26,7 +26,7 @@ namespace Homework.Models
         
         [StringLength(250, ErrorMessage="欄位長度不得大於 250 個字元")]
         [Required]
-        [Email不可重覆]
+        [EmailDup]
         public string Email { get; set; }
         
         [StringLength(50, ErrorMessage="欄位長度不得大於 50 個字元")]
@@ -41,15 +41,17 @@ namespace Homework.Models
         public virtual 客戶資料 客戶資料 { get; set; }
     }
 
-    public partial class Email不可重覆Attribute : DataTypeAttribute
+    public partial class EmailDupAttribute : DataTypeAttribute
     {
-        public Email不可重覆Attribute():base(DataType.Text)
+        public EmailDupAttribute():base(DataType.Text)
         {
 
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
+            if (value == null) return null;
+
             客戶聯絡人Repository repo客戶聯絡人 = RepositoryHelper.Get客戶聯絡人Repository();
 
             var context = (客戶聯絡人)validationContext.ObjectInstance;

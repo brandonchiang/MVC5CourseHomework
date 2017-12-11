@@ -32,7 +32,8 @@ namespace Homework.Controllers
 
                 if (where != null)
                 {
-                    if (where.客戶Id != 0) query = query.Where(x => x.客戶Id.ToString().Contains(where.客戶Id.ToString()));
+                    if(where.客戶資料!=null)
+                        if (!string.IsNullOrEmpty(where.客戶資料.客戶名稱)) query = query.Where(x => x.客戶資料.客戶名稱.Contains(where.客戶資料.客戶名稱));
                     if (!string.IsNullOrEmpty(where.職稱)) query = query.Where(x => x.職稱.Contains(where.職稱));
                     if (!string.IsNullOrEmpty(where.姓名)) query = query.Where(x => x.姓名.ToString().Contains(where.姓名.ToString()));
                     if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.ToString().Contains(where.Email.ToString()));

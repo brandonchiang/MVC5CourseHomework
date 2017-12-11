@@ -19,7 +19,8 @@ namespace Homework.Controllers
         // GET: 客戶資料
         public ActionResult Index(string 客戶分類)
         {
-            ViewBag.客戶分類 = new SelectList(repo客戶資料.All(), "客戶分類", "客戶分類", null);
+            //ViewBag.客戶分類 = new SelectList(repo客戶資料.All(), "客戶分類", "客戶分類", null);
+            ViewBag.客戶分類 = new SelectList(repo客戶資料.getCalalogList());
 
             if (TempData["客戶資料query_action"] != null)
             {
@@ -32,24 +33,17 @@ namespace Homework.Controllers
                 else
                 {
                     //客戶資料 result =(客戶資料) data ; //發現這一動是多餘的，還會出錯
-                    return View(data);
+                    return View(data.Take(100));
                 }
             }
             else
             {
                 if (!string.IsNullOrEmpty(客戶分類))
-                    return View(repo客戶資料.filterByCatalog(客戶分類));
+                    return View(repo客戶資料.filterByCatalog(客戶分類).Take(100));
                 else
-                    return View(repo客戶資料.All());
+                    return View(repo客戶資料.All().Take(100));
             }
         }
-
-        //public JsonResult Reload(string catalog)
-        //{
-        //    var data = repo客戶資料.All().Where(p => p.客戶分類.Equals(catalog));
-        //    var data_list = data.ToList();
-        //    return Json(data_list, JsonRequestBehavior.AllowGet);
-        //}
 
         public ActionResult Reload(string catalog)
         {
