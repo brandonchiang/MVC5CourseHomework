@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using Homework.Models;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
+using ClosedXML.Excel;
+using System.ComponentModel;
 
 namespace Homework.Controllers
 {
@@ -231,6 +233,26 @@ namespace Homework.Controllers
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
+
+
+        public ActionResult Export()
+        {
+            var data = (from d in repo客戶資料.All()
+                       select new
+                       {
+                           d.Id,
+                           d.客戶名稱,
+                           d.統一編號,
+                           d.電話,
+                           d.傳真,
+                           d.地址,
+                           d.客戶分類
+                       }).ToList();
+            DataTable dt客戶資料 = ToDataTable(data);
+            return base.Export(dt客戶資料, "客戶資料");
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {

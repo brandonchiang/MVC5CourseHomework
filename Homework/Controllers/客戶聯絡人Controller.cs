@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Homework.Models;
+using ClosedXML.Excel;
 
 namespace Homework.Controllers
 {
@@ -275,6 +276,21 @@ namespace Homework.Controllers
         //    repoSaveChanges();
         //    return RedirectToAction("Index");
         //}
+        public ActionResult Export()
+        {
+            var data = (from d in repo客戶聯絡人.All()
+                        select new
+                        {
+                            d.客戶資料.客戶名稱,
+                            d.職稱,
+                            d.姓名,
+                            d.Email,
+                            d.手機,
+                            d.電話,
+                        }).ToList();
+            DataTable dt客戶聯絡人 = ToDataTable(data);
+            return base.Export(dt客戶聯絡人, "客戶聯絡人");
+        }
 
         protected override void Dispose(bool disposing)
         {

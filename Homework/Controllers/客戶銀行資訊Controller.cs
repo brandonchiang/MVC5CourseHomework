@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Homework.Models;
+using ClosedXML.Excel;
 
 namespace Homework.Controllers
 {
@@ -250,6 +251,23 @@ namespace Homework.Controllers
             TempData["msg"] = "刪除成功";
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Export()
+        {
+            var data = (from d in repo客戶銀行資訊.All()
+                        select new
+                        {
+                            d.客戶資料.客戶名稱,
+                            d.銀行名稱,
+                            d.銀行代碼,
+                            d.分行代碼,
+                            d.帳戶名稱,
+                            d.帳戶號碼,
+                        }).ToList();
+            DataTable dt客戶銀行資訊 = ToDataTable(data);
+
+            return base.Export(dt客戶銀行資訊, "客戶銀行資訊");
         }
 
         protected override void Dispose(bool disposing)
