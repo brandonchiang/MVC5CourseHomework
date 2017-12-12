@@ -8,7 +8,7 @@ namespace Homework.Models
 	{
         public override IQueryable<客戶資料> All()
         {
-            return base.All().Where(p=>p.IsDeleted==false);
+            return base.All().Where(p=>p.IsDeleted==false).Take(50);
         }
 
         public 客戶資料 Find(int id)
@@ -22,7 +22,7 @@ namespace Homework.Models
         }
         public IQueryable<客戶資料> filterByCatalog(string catalog)
         {
-            return base.All().Where(p => p.IsDeleted == false && p.客戶分類.Equals(catalog));
+            return base.All().Where(p => p.IsDeleted == false && p.客戶分類.Equals(catalog)).Take(50);
         }
     }
 

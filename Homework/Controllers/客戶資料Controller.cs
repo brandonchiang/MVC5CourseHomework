@@ -19,14 +19,39 @@ namespace Homework.Controllers
         //private 客戶Entities db = new 客戶Entities();
 
         // GET: 客戶資料
-        public ActionResult Index(string 客戶分類)
+        public ActionResult Index(string 客戶分類, string sortOrder)
         {
             //ViewBag.客戶分類 = new SelectList(repo客戶資料.All(), "客戶分類", "客戶分類", null);
+            var where = (客戶資料)TempData["客戶資料query_where"];
+
+            ViewBag.客戶名稱SortParam = sortOrder == "客戶名稱" ? "客戶名稱desc" : "客戶名稱";
+            ViewBag.統一編號SortParam = sortOrder == "統一編號" ? "統一編號desc" : "統一編號";
+            ViewBag.電話SortParam = sortOrder == "電話" ? "電話desc" : "電話";
+            ViewBag.傳真SortParam = sortOrder == "傳真" ? "傳真desc" : "傳真";
+            ViewBag.地址SortParam = sortOrder == "地址" ? "地址desc" : "地址";
+            ViewBag.EmailSortParam = sortOrder == "Email" ? "Emaildesc" : "Email";
+
             ViewBag.客戶分類 = new SelectList(repo客戶資料.getCalalogList());
 
+            var query = repo客戶資料.All();
             if (TempData["客戶資料query_action"] != null)
             {
-                var data = (List<客戶資料>)TempData["客戶資料query_result"];
+                //var data = (List<客戶資料>)TempData["客戶資料query_result"];
+                if (where != null)
+                {
+                    if (where.Id != 0) query = query.Where(x => x.Id.ToString().Contains(where.Id.ToString()));
+                    if (!string.IsNullOrEmpty(where.客戶名稱)) query = query.Where(x => x.客戶名稱.Contains(where.客戶名稱));
+                    if (!string.IsNullOrEmpty(where.統一編號)) query = query.Where(x => x.統一編號.ToString().Contains(where.統一編號.ToString()));
+                    if (where.電話 != null) query = query.Where(x => x.電話.ToString().Contains(where.電話.ToString()));
+                    if (!string.IsNullOrEmpty(where.傳真)) query = query.Where(x => x.傳真.Contains(where.傳真));
+                    if (!string.IsNullOrEmpty(where.地址)) query = query.Where(x => x.地址.Contains(where.地址));
+                    if (!string.IsNullOrEmpty(where.Email)) query = query.Where(x => x.Email.Contains(where.Email));
+                }
+                if (!string.IsNullOrEmpty(客戶分類))
+                    query = query.Where(x => x.客戶分類.Equals(客戶分類));
+
+                query = GetSortParam(sortOrder, query);
+                var data = query.ToList();
                 if (data == null || data.Count() == 0)
                 {
                     TempData["客戶資料query_message"] = "查無資料，請修改查詢條件";
@@ -35,16 +60,66 @@ namespace Homework.Controllers
                 else
                 {
                     //客戶資料 result =(客戶資料) data ; //發現這一動是多餘的，還會出錯
-                    return View(data.Take(100));
+                    //return View(data.Take(100));
                 }
             }
             else
             {
                 if (!string.IsNullOrEmpty(客戶分類))
-                    return View(repo客戶資料.filterByCatalog(客戶分類).Take(100));
+                    query = repo客戶資料.filterByCatalog(客戶分類);
                 else
-                    return View(repo客戶資料.All().Take(100));
+                    query = repo客戶資料.All();
+
+                query = GetSortParam(sortOrder, query);                
             }
+
+            TempData["客戶資料query_action"] = false;
+            return View(query);
+        }
+
+        private static IQueryable<客戶資料> GetSortParam(string sortOrder, IQueryable<客戶資料> query)
+        {
+            switch (sortOrder)
+            {
+                case "客戶名稱":
+                    query = query.OrderBy(s => s.客戶名稱);
+                    break;
+                case "客戶名稱desc":
+                    query = query.OrderByDescending(s => s.客戶名稱);
+                    break;
+                case "統一編號":
+                    query = query.OrderBy(s => s.統一編號);
+                    break;
+                case "統一編號desc":
+                    query = query.OrderByDescending(s => s.統一編號);
+                    break;
+                case "電話":
+                    query = query.OrderBy(s => s.電話);
+                    break;
+                case "電話desc":
+                    query = query.OrderByDescending(s => s.電話);
+                    break;
+                case "傳真":
+                    query = query.OrderBy(s => s.傳真);
+                    break;
+                case "傳真desc":
+                    query = query.OrderByDescending(s => s.傳真);
+                    break;
+                case "地址":
+                    query = query.OrderBy(s => s.地址);
+                    break;
+                case "地址desc":
+                    query = query.OrderByDescending(s => s.地址);
+                    break;
+                case "Email":
+                    query = query.OrderBy(s => s.Email);
+                    break;
+                case "Emaildesc":
+                    query = query.OrderByDescending(s => s.Email);
+                    break;
+            }
+
+            return query;
         }
 
         public ActionResult Reload(string catalog)
@@ -181,18 +256,18 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = repo客戶資料.All();
+                //var query = repo客戶資料.All();
 
-                if (!string.IsNullOrEmpty(客戶資料.客戶名稱)) query = query.Where(x=>x.客戶名稱.Contains(客戶資料.客戶名稱));
-                if (!string.IsNullOrEmpty(客戶資料.統一編號)) query = query.Where(x=>x.統一編號.Contains(客戶資料.統一編號));
-                if (!string.IsNullOrEmpty(客戶資料.電話)) query = query.Where(x=>x.電話.Contains(客戶資料.電話));
-                if (!string.IsNullOrEmpty(客戶資料.傳真)) query = query.Where(x=>x.傳真.Contains(客戶資料.傳真));
-                if (!string.IsNullOrEmpty(客戶資料.地址)) query = query.Where(x=>x.地址.Contains(客戶資料.地址));
-                if (!string.IsNullOrEmpty(客戶資料.Email)) query = query.Where(x=>x.Email.Contains(客戶資料.Email));
-                if (!string.IsNullOrEmpty(客戶資料.客戶分類)) query = query.Where(x=>x.客戶分類.Contains(客戶資料.客戶分類));
+                //if (!string.IsNullOrEmpty(客戶資料.客戶名稱)) query = query.Where(x=>x.客戶名稱.Contains(客戶資料.客戶名稱));
+                //if (!string.IsNullOrEmpty(客戶資料.統一編號)) query = query.Where(x=>x.統一編號.Contains(客戶資料.統一編號));
+                //if (!string.IsNullOrEmpty(客戶資料.電話)) query = query.Where(x=>x.電話.Contains(客戶資料.電話));
+                //if (!string.IsNullOrEmpty(客戶資料.傳真)) query = query.Where(x=>x.傳真.Contains(客戶資料.傳真));
+                //if (!string.IsNullOrEmpty(客戶資料.地址)) query = query.Where(x=>x.地址.Contains(客戶資料.地址));
+                //if (!string.IsNullOrEmpty(客戶資料.Email)) query = query.Where(x=>x.Email.Contains(客戶資料.Email));
+                //if (!string.IsNullOrEmpty(客戶資料.客戶分類)) query = query.Where(x=>x.客戶分類.Contains(客戶資料.客戶分類));
 
                 //return View(result);
-                TempData["客戶資料query_result"] = query.ToList();
+                TempData["客戶資料query_where"] = 客戶資料;
                 TempData["客戶資料query_action"] = true;
                 return RedirectToAction("Index");
             }

@@ -81,7 +81,7 @@ namespace Homework.Controllers
                         query = query.OrderByDescending(s => s.客戶資料.客戶名稱);
                         break;
                 }
-                        var data = query.ToList();
+                var data = query.ToList();
                 if (data == null || data.Count() == 0)
                 {
                     TempData["客戶銀行資訊query_message"] = "查無資料，請修改查詢條件";
@@ -231,7 +231,7 @@ namespace Homework.Controllers
             //客戶資料 客戶資料= new 客戶資料();
             //if (ModelState.IsValid)
             {
-                var query = repo客戶銀行資訊.All();
+                //var query = repo客戶銀行資訊.All();
 
                 TempData["客戶銀行資訊query_where"] = 客戶銀行資訊;
                 TempData["客戶銀行資訊query_action"] = true;
